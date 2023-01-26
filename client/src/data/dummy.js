@@ -1,14 +1,13 @@
 import React from 'react';
-import { AiOutlineCalendar, AiOutlineShoppingCart, AiOutlineAreaChart, AiOutlineBarChart, AiOutlineStock } from 'react-icons/ai';
-import { FiShoppingBag, FiEdit, FiPieChart, FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
-import { BsKanban, BsBarChart, BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
-import { BiColorFill } from 'react-icons/bi';
-import { IoMdContacts } from 'react-icons/io';
-import { RiContactsLine, RiStockLine } from 'react-icons/ri';
-import { MdOutlineSupervisorAccount } from 'react-icons/md';
+import { AiOutlinePicCenter } from 'react-icons/ai';
+import { GoFileSubmodule } from 'react-icons/go';
+import { FiBarChart, FiCreditCard, FiStar, FiShoppingCart } from 'react-icons/fi';
+import { FaFileAudio } from 'react-icons/fa';
+import {  BsBoxSeam, BsCurrencyDollar, BsShield, BsChatLeft } from 'react-icons/bs';
+import { MdOutlineContacts, MdOutlinePostAdd, MdOutlineSupervisorAccount, MdWorkOutline } from 'react-icons/md';
 import { HiOutlineRefresh } from 'react-icons/hi';
 import { TiTick } from 'react-icons/ti';
-import { GiLouvrePyramid } from 'react-icons/gi';
+import { GiTalk } from 'react-icons/gi';
 import { GrLocation } from 'react-icons/gr';
 import avatar from './avatar.jpg';
 import avatar2 from './avatar2.jpg';
@@ -21,7 +20,7 @@ import product4 from './product4.jpg';
 import product5 from './product5.jpg';
 import product6 from './product6.jpg';
 import product7 from './product7.jpg';
-import product8 from './product8.jpg';
+
 
 export const gridOrderImage = (props) => (
   <div>
@@ -474,88 +473,60 @@ export const links = [
     title: 'Dashboard',
     links: [
       {
-        name: 'ecommerce',
-        icon: <FiShoppingBag />,
+        name: 'Academy',
+        icon: <AiOutlinePicCenter />,
       },
     ],
   },
 
   {
-    title: 'Pages',
+    title: 'General',
     links: [
       {
-        name: 'orders',
-        icon: <AiOutlineShoppingCart />,
-      },
-      {
-        name: 'employees',
-        icon: <IoMdContacts />,
-      },
-      {
-        name: 'customers',
-        icon: <RiContactsLine />,
+        name: 'Select Courses',
+        icon: <GoFileSubmodule />,
       },
     ],
   },
-  {
-    title: 'Apps',
-    links: [
-      {
-        name: 'calendar',
-        icon: <AiOutlineCalendar />,
-      },
-      {
-        name: 'kanban',
-        icon: <BsKanban />,
-      },
-      {
-        name: 'editor',
-        icon: <FiEdit />,
-      },
-      {
-        name: 'color-picker',
-        icon: <BiColorFill />,
-      },
-    ],
-  },
-  {
-    title: 'Charts',
-    links: [
-      {
-        name: 'line',
-        icon: <AiOutlineStock />,
-      },
-      {
-        name: 'area',
-        icon: <AiOutlineAreaChart />,
-      },
 
+  {
+    title: 'Blinded',
+    links: [
       {
-        name: 'bar',
-        icon: <AiOutlineBarChart />,
-      },
-      {
-        name: 'pie',
-        icon: <FiPieChart />,
-      },
-      {
-        name: 'financial',
-        icon: <RiStockLine />,
-      },
-      {
-        name: 'color-mapping',
-        icon: <BsBarChart />,
-      },
-      {
-        name: 'pyramid',
-        icon: <GiLouvrePyramid />,
-      },
-      {
-        name: 'stacked',
-        icon: <AiOutlineBarChart />,
+        name: 'Audio Courses',
+        icon: <FaFileAudio />,
       },
     ],
   },
+
+  {
+    title: 'Build-Carrier',
+    links: [
+      {
+        name: 'Career Building Courses',
+        icon: <MdWorkOutline />,
+      },
+      {
+        name: 'Talk To Experts',
+        icon: <GiTalk />,
+      },
+      {
+        name: 'Share Your Opinion',
+        icon: <MdOutlinePostAdd />,
+      },
+    ],
+  },
+
+  {
+    title: 'Support',
+    links: [
+      {
+        name: 'Contacts',
+        icon: <MdOutlineContacts />,
+      },
+    ],
+  },
+
 ];
 
 export const cartData = [
