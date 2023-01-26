@@ -11,6 +11,12 @@ const courseSchema = new Schema(
 			type: String,
 			required: true,
 		},
+		course_type: {
+			type: String,
+			required: true,
+			enum: ["general", "blind"],
+			default: "general",
+		},
 		courseImg: String,
 		courseImgCloudinaryId: String,
 	},
