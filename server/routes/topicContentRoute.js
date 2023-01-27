@@ -8,7 +8,6 @@ router.post(
 	upload.fields([
 		{ name: "topic-img", maxCount: 1 },
 		{ name: "topic-video", maxCount: 1 },
-		{ name: "topic-audio", maxCount: 1 },
 	]),
 	addTopicContent
 );

@@ -6,16 +6,13 @@ exports.addTopicContent = expressAsyncHandler(async (req, res) => {
 	const results = await Promise.all([
 		handleUpload(req, "topic-img", "images"),
 		handleUpload(req, "topic-video", "videos"),
-		handleUpload(req, "topic-audio", "videos"),
 	]);
 
-	let imgRes, vidRes, audRes;
+	let imgRes, vidRes;
 
 	results.forEach((result) => {
 		if (result.resource_type === "image") {
 			imgRes = result;
-		} else if (result.is_audio) {
-			audRes = result;
 		} else {
 			vidRes = result;
 		}
@@ -27,8 +24,6 @@ exports.addTopicContent = expressAsyncHandler(async (req, res) => {
 		topicImgCloudinaryId: imgRes ? imgRes.public_id : "",
 		topicVideo: vidRes ? vidRes.secure_url : "",
 		topicVideoCloudinaryId: vidRes ? vidRes.public_id : "",
-		topicAudio: audRes ? audRes.secure_url : "",
-		topicAudioCloudinaryId: audRes ? audRes.public_id : "",
 	}).save();
 
 	res.status(201).json({
