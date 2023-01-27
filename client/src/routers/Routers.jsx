@@ -9,6 +9,9 @@ import CareerBuildingCourses from "./../pages/buildCareer/CareerBuildingCourses"
 import TalkToExperts from "./../pages/buildCareer/TalkToExperts";
 import ShareYourOpinion from "./../pages/buildCareer/ShareYourOpinion";
 import Contact from "./../pages/support/Contact";
+import ViewCourse from "../pages/general/ViewCourse";
+import ViewTopic from "../pages/general/ViewTopic";
+import ViewContent from "../pages/general/ViewContent";
 
 const Routers = () => {
 	return (
@@ -17,6 +20,9 @@ const Routers = () => {
 				<Route path="/" element={<Academy />} />
 				{/* <Route path="/login" element={<Login />} /> */}
 				<Route path="/select-courses" element={<Course />} />
+				<Route path="/view-course" element={<ViewCourse />} />
+				<Route path="/view-topic" element={<ViewTopic />} />
+				<Route path="/topic-content" element={<ViewContent />} />
 				<Route path="/audio-courses" element={<Audio />} />
 				<Route path="/career-building-courses" element={<CareerBuildingCourses />} />
 				<Route path="/talk-to-expert" element={<TalkToExperts />} />

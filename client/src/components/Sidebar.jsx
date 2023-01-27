@@ -31,7 +31,12 @@ const Sidebar = () => {
 							onClick={handleCloseSideBar}
 							className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
 						>
-							<SiShopware /> <span>EduBangla</span>
+							<img style={{
+											width: "55px",
+											marginTop: "8px",
+											marginLeft: "22px",
+										}}
+										src="https://res.cloudinary.com/hostingimagesservice/image/upload/v1674792388/eduBangla/images/fav_icon_kggp1y_fcacpk.png" alt="" /> <span className="mt-3">EduBangla</span>
 						</Link>
 						<TooltipComponent content="Menu" position="BottomCenter">
 							<button
