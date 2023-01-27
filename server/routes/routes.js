@@ -3,6 +3,7 @@ const userRoute = require("./userRoute");
 const courseRoute = require("./courseRoute");
 const topicRoute = require("./topicRoute");
 const profileRoute = require("./profileRoute");
+const classRoute = require("./classRoute");
 
 const routers = [
 	{
@@ -16,6 +17,10 @@ const routers = [
 	{
 		path: "/api/profile",
 		handler: profileRoute,
+	},
+	{
+		path: "/api/class",
+		handler: classRoute,
 	},
 	{
 		path: "/api/course",
