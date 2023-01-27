@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { toast } from "react-toastify";
-import { Header } from "../../components";
+import AddClass from "./AddClass";
+import AddCourse from "./AddCourse";
+import AddTopic from "./AddTopic";
+import TopicContent from "./TopicContent";
 // import { useAddCategoryMutation } from "../../services/apiSlice";
 
 const initialData = { name: "", description: "", category: "" };
@@ -39,36 +41,22 @@ const Uploads = () => {
 
 	return (
 		<div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-			<div className="mb-10">
-				<Header category="Dashboard" title="Add Classes" />
-			</div>
+			
+            <div>
+                <AddClass/>
+            </div>
+            
+            <div>
+                <AddCourse/>
+            </div>
 
-			<span className="sr-only">Icon description</span>
-			<form className="w-full" onSubmit={handleSubmit}>
-				<div className="flex flex-wrap -mx-3 mb-6">
-					<div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-						<label
-							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							htmlFor="grid-first-name"
-						>
-							Name
-						</label>
+            <div>
+                <AddTopic/>
+            </div>
 
-						<input
-							// disabled={responseInfo.isLoading}
-							required
-							className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-							id="grid-first-name"
-							type="text"
-							placeholder="Jane"
-							name="name"
-							value={formData.name}
-							onChange={handleOnChange}
-						/>
-					</div>
-					
-				</div>
-			</form>
+            <div>
+                <TopicContent/>
+            </div>
 		</div>
 	);
 };

@@ -1,5 +1,7 @@
 "# Runtime_Terror"
 
+To run this project you can do simply clone the git first and then push a command in terminal to "npm install" after completing npm install, you just need to write npm start on terminal and hit enter for both client and server to show our live project.
+
 Technology we have used: MongoDB, Express.JS, React.JS, Node.JS -->MERN.
 
 Other Framework/Library we have used: Tailwind.CSS & Syncfusion.

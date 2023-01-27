@@ -5,7 +5,7 @@ import { Header } from "../../components";
 
 const initialData = { name: "", description: "", category: "" };
 
-const Contact = () => {
+const TopicContent = () => {
 	const [formData, setFormData] = useState(initialData);
 	// const [addCategory, responseInfo] = useAddCategoryMutation();
 
@@ -40,7 +40,7 @@ const Contact = () => {
 	return (
 		<div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
 			<div className="mb-10">
-				<Header category="Send Feedback" title="Have any query? Tell us..." />
+				<Header  title="Topic Content" />
 			</div>
 
 			<form className="w-full" onSubmit={handleSubmit}>
@@ -50,7 +50,7 @@ const Contact = () => {
 							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
 							htmlFor="grid-first-name"
 						>
-							Name
+							Teacher Name
 						</label>
 						<input
 							required
@@ -65,21 +65,29 @@ const Contact = () => {
 					</div>
 					<div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
 						<label
+							htmlFor="category"
 							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-							htmlFor="grid-first-name"
 						>
-							Email
+							Topic Name
 						</label>
-						<input
+						<select
+							id="category"
+							name="category"
+							value={formData.category}
 							required
 							onChange={handleOnChange}
-							className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-							id="grid-first-name"
-							type="text"
-							placeholder="email"
-							name="name"
-							value={formData.name}
-						/>
+							className="block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+						>
+							<option value="">
+								--Select course--
+							</option>
+							{/* {categoryListInfo.isSuccess &&
+								categoryListInfo.data?.allCategories?.map((category, i) => (
+									<option key={i} value={category._id}>
+										{category.name}
+									</option>
+								))} */}
+						</select>
 					</div>
 				</div>
 				<div className="flex flex-wrap -mx-3 mb-6">
@@ -88,7 +96,7 @@ const Contact = () => {
 							htmlFor="message"
 							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
 						>
-							Query
+							Description
 						</label>
 						<textarea
 							required
@@ -107,12 +115,33 @@ const Contact = () => {
 					</div>
 				</div>
 
+
+				<div className="w-full my-6 md:mb-0">
+					<label
+						className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+						htmlFor="file_input"
+					>
+						Topic Video
+					</label>
+					<input
+						required
+						onChange={handleOnChange}
+						// disabled={responseInfo.isLoading}
+						className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+						id="file_input"
+						type="file"
+						name="course video"
+						defaultValue={formData.image}
+						accept="video/*"
+					/>
+				</div>
+
 				<div className="md:w-2/3">
 					<button
 						className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5"
 						type="submit"
 					>
-						Send message
+						Add Content
 					</button>
 				</div>
 			</form>
@@ -120,4 +149,4 @@ const Contact = () => {
 	);
 };
 
-export default Contact;
+export default TopicContent;
