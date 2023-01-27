@@ -3,7 +3,6 @@ import PageNotFound from "../pages/PageNotFound/PageNotFound";
 import { Route, Routes } from "react-router-dom";
 import IsLoggedIn from "./IsLoggedIn";
 import Course from "./../pages/general/Course";
-import Academy from "./../pages/dashboard/Academy";
 import Audio from "../pages/blinded/Audio";
 import CareerBuildingCourses from "./../pages/buildCareer/CareerBuildingCourses";
 import TalkToExperts from "./../pages/buildCareer/TalkToExperts";
@@ -15,6 +14,7 @@ import ViewContent from "../pages/general/ViewContent";
 import Login from "../pages/login/Login";
 import Register from "./../pages/register/Register";
 import IsAlreadyLoggedIn from "./IsAlreadyLoggedIn";
+import Uploads from "../pages/dashboard/Uploads";
 
 const Routers = () => {
 	return (
@@ -23,7 +23,7 @@ const Routers = () => {
 				path="/"
 				element={
 					<IsLoggedIn>
-						<Academy />
+						<Uploads />
 					</IsLoggedIn>
 				}
 			/>
