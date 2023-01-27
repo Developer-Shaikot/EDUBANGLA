@@ -1,5 +1,3 @@
-import "./loading.css";
-
 const Loading = () => {
 	return (
 		<div className="relative items-center block p-6 bg-white border border-gray-100 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-800 dark:hover:bg-gray-700">

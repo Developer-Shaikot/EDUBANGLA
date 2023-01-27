@@ -72,5 +72,20 @@ exports.logoutUser = expressAsyncHandler(async (req, res) => {
 });
 
 exports.isLoggedIn = expressAsyncHandler(async (req, res) => {
-	
-})
+	if (req.cookies && req.cookies.auth) {
+		return res.status(200).json({
+			status: true,
+			user: verifyToken(req.cookies.auth),
+		});
+	}
+
+	return res.status(200).json({
+		status: false,
+		user: null,
+	});
+});
+
+exports.logoutController = (req, res) => {
+	res.clearCookie("auth");
+	res.status(200).json({ success: true, message: "Logout successful" });
+};
