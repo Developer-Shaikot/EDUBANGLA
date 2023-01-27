@@ -4,7 +4,7 @@ const Class = require("../models/ClassModel");
 exports.addClass = expressAsyncHandler(async (req, res) => {
 	const { user_type } = req.user;
 
-	if (user_type === "admin") {
+	if (user_type === "admin" || user_type === "teacher") {
 		const addClass = await new Class(req.body).save();
 
 		if (addClass) {
