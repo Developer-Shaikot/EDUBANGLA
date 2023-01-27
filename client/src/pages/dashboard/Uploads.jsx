@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Header } from "../../components";
+import AddCourse from "./AddCourse";
 // import { useAddCategoryMutation } from "../../services/apiSlice";
 
 const initialData = { name: "", description: "", category: "" };
@@ -45,7 +46,7 @@ const Uploads = () => {
 
 			<span className="sr-only">Icon description</span>
 			<form className="w-full" onSubmit={handleSubmit}>
-				<div className="flex flex-wrap -mx-3 mb-6">
+				<div className="flex flex-wrap -mx-3">
 					<div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
 						<label
 							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -66,9 +67,21 @@ const Uploads = () => {
 							onChange={handleOnChange}
 						/>
 					</div>
-					
+				</div>
+				<div className="md:w-2/3">
+					<button
+						className="shadow bg-purple-500 hover:bg-purple-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5"
+						type="submit"
+						// disabled={responseInfo.isLoading}
+					>
+						Add Category
+					</button>
 				</div>
 			</form>
+
+            <div>
+                <AddCourse/>
+            </div>
 		</div>
 	);
 };
