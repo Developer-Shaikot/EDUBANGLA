@@ -1,0 +1,382 @@
+{
+  "id": "05ae6718-4741-4501-94b5-b1d7f7faf70e",
+  "version": "2.0",
+  "name": "Runtime_Terror_Testing",
+  "url": "http://localhost:3001/",
+  "tests": [{
+    "id": "e4fd6ce4-5e66-4dc0-956e-a03399649846",
+    "name": "Upload Content",
+    "commands": [{
+      "id": "a8ed8c7b-8c71-4a42-b577-52df1dd5a6dc",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3001/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f3f9045c-b5be-437e-97fe-87fb7129cd5b",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x880",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "359ffc68-b392-4dc9-af5b-9a71a98000dd",
+      "comment": "",
+      "command": "click",
+      "target": "id=grid-first-name",
+      "targets": [
+        ["id=grid-first-name", "id"],
+        ["name=classTitle", "name"],
+        ["css=.w-full:nth-child(3) > .flex #grid-first-name", "css:finder"],
+        ["xpath=//input[@id='grid-first-name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6941e4e4-4523-4f16-830f-aac9c3094fa4",
+      "comment": "",
+      "command": "type",
+      "target": "id=grid-first-name",
+      "targets": [
+        ["id=grid-first-name", "id"],
+        ["name=classTitle", "name"],
+        ["css=.w-full:nth-child(3) > .flex #grid-first-name", "css:finder"],
+        ["xpath=//input[@id='grid-first-name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Machine Learning"
+    }, {
+      "id": "48a71997-f87b-4061-ae6f-3e9303476394",
+      "comment": "",
+      "command": "click",
+      "target": "css=.hover\\3A bg-purple-600",
+      "targets": [
+        ["css=.hover\\3A bg-purple-600", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div/div/form/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Class')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3d49a66d-3589-4749-83f5-27068dd87e4f",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "css=.hover\\3A bg-purple-600",
+      "targets": [
+        ["css=.hover\\3A bg-purple-600", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div/div/form/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Class')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "505af27b-2635-41d8-8296-628032d0ff9f",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "css=.hover\\3A bg-purple-600",
+      "targets": [
+        ["css=.hover\\3A bg-purple-600", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div/div/form/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Class')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec7645e4-b6af-45b5-8243-887461199e6c",
+      "comment": "",
+      "command": "click",
+      "target": "name=courseName",
+      "targets": [
+        ["name=courseName", "name"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a82705d5-0d2e-47a6-bcbe-9bd4edceac8a",
+      "comment": "",
+      "command": "type",
+      "target": "name=courseName",
+      "targets": [
+        ["name=courseName", "name"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": "Machine Learning"
+    }, {
+      "id": "ae356840-c6ba-40d5-9874-4c16e95691f1",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=class", "name"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div/div[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ec7ae850-43f9-443f-b71c-b5b6beadc5e6",
+      "comment": "",
+      "command": "select",
+      "target": "id=category",
+      "targets": [],
+      "value": "label=Bsc. in swe"
+    }, {
+      "id": "de7f90d1-cc8b-476c-87ee-9ff1946e1142",
+      "comment": "",
+      "command": "click",
+      "target": "id=message",
+      "targets": [
+        ["id=message", "id"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #message", "css:finder"],
+        ["xpath=//textarea[@id='message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b21e1c45-eb7e-4fae-ab95-6943414c7525",
+      "comment": "",
+      "command": "type",
+      "target": "id=message",
+      "targets": [
+        ["id=message", "id"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #message", "css:finder"],
+        ["xpath=//textarea[@id='message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Hello"
+    }, {
+      "id": "0101501e-8097-429b-86cc-0676aa7600ff",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(2) > .m-2 > .w-full .shadow",
+      "targets": [
+        ["css=div:nth-child(2) > .m-2 > .w-full .shadow", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5bb944b0-a600-435b-803e-56e52d57f642",
+      "comment": "",
+      "command": "click",
+      "target": "name=topicName",
+      "targets": [
+        ["name=topicName", "name"],
+        ["css=div:nth-child(3) #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7432d4b-1011-4375-a158-b93d07dbf211",
+      "comment": "",
+      "command": "type",
+      "target": "name=topicName",
+      "targets": [
+        ["name=topicName", "name"],
+        ["css=div:nth-child(3) #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": "Artificial Intelligence"
+    }, {
+      "id": "c57063d4-c9da-46c3-8151-3d3d1b833529",
+      "comment": "",
+      "command": "click",
+      "target": "name=course",
+      "targets": [
+        ["name=course", "name"],
+        ["css=div:nth-child(3) #category", "css:finder"],
+        ["xpath=(//select[@id='category'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div/div[2]/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div/div[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "abf153e0-46e4-41cf-ab08-4a553cc95a27",
+      "comment": "",
+      "command": "select",
+      "target": "name=course",
+      "targets": [],
+      "value": "label=Machine Learning"
+    }, {
+      "id": "cc9e5f4c-497f-4549-9ff5-88eb0f694c99",
+      "comment": "",
+      "command": "click",
+      "target": "name=topicDescription",
+      "targets": [
+        ["name=topicDescription", "name"],
+        ["css=div:nth-child(3) #message", "css:finder"],
+        ["xpath=(//textarea[@id='message'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div[2]/div/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "005ee492-306c-443c-b924-dd2b0ee6a4c5",
+      "comment": "",
+      "command": "type",
+      "target": "name=topicDescription",
+      "targets": [
+        ["name=topicDescription", "name"],
+        ["css=div:nth-child(3) #message", "css:finder"],
+        ["xpath=(//textarea[@id='message'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div[2]/div/textarea", "xpath:position"]
+      ],
+      "value": "Hey"
+    }, {
+      "id": "a3a2d74b-e104-4c97-8d38-8d8767eaba31",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .shadow",
+      "targets": [
+        ["css=div:nth-child(3) .shadow", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Course')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d2aff4e4-c21f-460f-a003-d31032ffb0fd",
+      "comment": "",
+      "command": "click",
+      "target": "name=teacherName",
+      "targets": [
+        ["name=teacherName", "name"],
+        ["css=div:nth-child(4) #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1241fc86-309b-4731-b9f9-8d03e1af9cd5",
+      "comment": "",
+      "command": "type",
+      "target": "name=teacherName",
+      "targets": [
+        ["name=teacherName", "name"],
+        ["css=div:nth-child(4) #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": "AI"
+    }, {
+      "id": "a548dd27-7cdf-4f24-8e3a-e7ffb7102db6",
+      "comment": "",
+      "command": "click",
+      "target": "id=topicName",
+      "targets": [
+        ["id=topicName", "id"],
+        ["css=#topicName", "css:finder"],
+        ["xpath=//select[@id='topicName']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div/div[2]/select", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div/div[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "10bf8b47-8481-47d6-99a5-9cdfdb00ec07",
+      "comment": "",
+      "command": "select",
+      "target": "id=topicName",
+      "targets": [],
+      "value": "label=Artificial Intelligence"
+    }, {
+      "id": "3b7e0319-f4c4-4478-99a5-c85e6f538cd5",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) #message",
+      "targets": [
+        ["css=div:nth-child(4) #message", "css:finder"],
+        ["xpath=(//textarea[@id='message'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div[2]/div/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a50d6837-69a3-40d0-bcde-be182120eef6",
+      "comment": "",
+      "command": "type",
+      "target": "css=div:nth-child(4) #message",
+      "targets": [
+        ["css=div:nth-child(4) #message", "css:finder"],
+        ["xpath=(//textarea[@id='message'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div[2]/div/textarea", "xpath:position"]
+      ],
+      "value": "Hello all"
+    }, {
+      "id": "a2176f39-e0be-4a5c-af8a-48af7e237e6a",
+      "comment": "",
+      "command": "click",
+      "target": "name=topicVideo",
+      "targets": [
+        ["name=topicVideo", "name"],
+        ["css=div:nth-child(4) #file_input", "css:finder"],
+        ["xpath=(//input[@id='file_input'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aeee10fe-f415-4d0e-9ac8-1c6cba9eaf5a",
+      "comment": "",
+      "command": "type",
+      "target": "name=topicVideo",
+      "targets": [
+        ["name=topicVideo", "name"],
+        ["css=div:nth-child(4) #file_input", "css:finder"],
+        ["xpath=(//input[@id='file_input'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\Eqaim_Blog_site.mp4"
+    }, {
+      "id": "5e19a72c-bf67-4dee-a6e2-97eca870acec",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) > .m-2 .shadow",
+      "targets": [
+        ["css=div:nth-child(4) > .m-2 .shadow", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Content')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "457ede2a-913a-4f04-bbe0-155cb39502c5",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:3001/"],
+  "plugins": []
+}

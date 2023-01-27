@@ -1,0 +1,132 @@
+{
+  "id": "adfa40c6-a6cc-4be3-b066-0a4febe490b9",
+  "version": "2.0",
+  "name": "Runtime_Terror",
+  "url": "http://localhost:3001/select-courses",
+  "tests": [{
+    "id": "a9baae1c-43bf-402e-bdd4-108811b83105",
+    "name": "Test 1",
+    "commands": [{
+      "id": "aa4af7d0-7ec9-4d1b-b50f-275feb11c8c3",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3001/select-courses",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5b7f955b-f93b-40d5-8a21-39dd24b96b1f",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x880",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e4c7da58-e35f-4515-b582-b9acfac75cd9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w-full:nth-child(1) > .w-full .inline-flex",
+      "targets": [
+        ["css=.w-full:nth-child(1) > .w-full .inline-flex", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/div/button", "xpath:position"],
+        ["xpath=//button[contains(.,'View Courses')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fe810ec2-ba93-4401-9918-28b40c6193d1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w-full:nth-child(1) .mb-3",
+      "targets": [
+        ["css=.w-full:nth-child(1) .mb-3", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/div/div/p", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div[2]/div/div/div/p", "xpath:position"],
+        ["xpath=//p[contains(.,'In computer engineering, computer architecture is a description of the structure of a computer system made from component parts. It can sometimes be a high-level description that ignores details of the implementation.')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "455ab35a-bb01-4a50-98e8-8a66204f2380",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5dd96333-0141-41e4-a075-49b408fca40a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w-full:nth-child(2) .inline-flex",
+      "targets": [
+        ["css=.w-full:nth-child(2) .inline-flex", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div[2]/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23e3ede5-4206-4402-9250-bb1bed5132f8",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w-full:nth-child(1) .h-auto",
+      "targets": [
+        ["css=.w-full:nth-child(1) .h-auto", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/div/video", "xpath:idRelative"],
+        ["xpath=//video", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8c7f5e93-5983-4734-a6fc-12c09d2545bf",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w-full:nth-child(1) .h-auto",
+      "targets": [
+        ["css=.w-full:nth-child(1) .h-auto", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/div/video", "xpath:idRelative"],
+        ["xpath=//video", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "069ae537-6dca-4241-9257-08d6e9d5bb0d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w-full:nth-child(1) .h-auto",
+      "targets": [
+        ["css=.w-full:nth-child(1) .h-auto", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/div/video", "xpath:idRelative"],
+        ["xpath=//video", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "44358afa-5bad-4901-86e2-29ad36c659fc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.w-full:nth-child(1) .h-auto",
+      "targets": [
+        ["css=.w-full:nth-child(1) .h-auto", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/div/video", "xpath:idRelative"],
+        ["xpath=//video", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c8a3ef3a-af3a-4dbf-abfc-6e7af2ffaeb7",
+      "comment": "",
+      "command": "doubleClick",
+      "target": "css=.w-full:nth-child(1) .h-auto",
+      "targets": [
+        ["css=.w-full:nth-child(1) .h-auto", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/div/video", "xpath:idRelative"],
+        ["xpath=//video", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "c2f3c114-141b-4e95-9acd-61ca290f19d6",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["a9baae1c-43bf-402e-bdd4-108811b83105"]
+  }],
+  "urls": ["http://localhost:3001/select-courses"],
+  "plugins": []
+}

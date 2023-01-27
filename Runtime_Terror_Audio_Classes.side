@@ -1,0 +1,437 @@
+{
+  "id": "adfa40c6-a6cc-4be3-b066-0a4febe490b9",
+  "version": "2.0",
+  "name": "Runtime_Terror",
+  "url": "http://localhost:3001/audio-courses",
+  "tests": [{
+    "id": "5246fd39-1efa-41f0-86bf-fbe8184da3aa",
+    "name": "Upload Content",
+    "commands": [{
+      "id": "bfdfbec5-810c-451e-8c9e-c658bdb443ab",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3001/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c96b24dd-9471-4f37-9d04-3b59168ce5a8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x880",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0b700af1-72be-4e6e-a06b-b6f302a5797a",
+      "comment": "",
+      "command": "click",
+      "target": "id=grid-first-name",
+      "targets": [
+        ["id=grid-first-name", "id"],
+        ["name=classTitle", "name"],
+        ["css=.w-full:nth-child(3) > .flex #grid-first-name", "css:finder"],
+        ["xpath=//input[@id='grid-first-name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dd952bc2-d3ed-4874-a270-9d6a565b85d6",
+      "comment": "",
+      "command": "type",
+      "target": "id=grid-first-name",
+      "targets": [
+        ["id=grid-first-name", "id"],
+        ["name=classTitle", "name"],
+        ["css=.w-full:nth-child(3) > .flex #grid-first-name", "css:finder"],
+        ["xpath=//input[@id='grid-first-name']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "Database"
+    }, {
+      "id": "9c844357-0fe6-4e1e-ab2f-285aeae04e04",
+      "comment": "",
+      "command": "click",
+      "target": "css=.hover\\3A bg-purple-600",
+      "targets": [
+        ["css=.hover\\3A bg-purple-600", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div/div/form/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Class')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "8174a6d3-7412-417f-9939-144a7bdff9c2",
+      "comment": "",
+      "command": "click",
+      "target": "name=courseName",
+      "targets": [
+        ["name=courseName", "name"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c46dd5c6-e273-484c-b1be-894cba6cc759",
+      "comment": "",
+      "command": "type",
+      "target": "name=courseName",
+      "targets": [
+        ["name=courseName", "name"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": "MongoDB"
+    }, {
+      "id": "77097b35-757c-49fd-bd50-4d3fb5e06a7e",
+      "comment": "",
+      "command": "click",
+      "target": "id=category",
+      "targets": [
+        ["id=category", "id"],
+        ["name=class", "name"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #category", "css:finder"],
+        ["xpath=//select[@id='category']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div/div[2]/select", "xpath:idRelative"],
+        ["xpath=//select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b2650c0-e8af-4fe9-9ebd-42636f914e02",
+      "comment": "",
+      "command": "select",
+      "target": "id=category",
+      "targets": [],
+      "value": "label=Database"
+    }, {
+      "id": "8fb7c3f3-59a8-4836-bf45-75439405b783",
+      "comment": "",
+      "command": "click",
+      "target": "id=message",
+      "targets": [
+        ["id=message", "id"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #message", "css:finder"],
+        ["xpath=//textarea[@id='message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9b42c4dd-1952-4bbf-8fe2-4393db01f95e",
+      "comment": "",
+      "command": "type",
+      "target": "id=message",
+      "targets": [
+        ["id=message", "id"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #message", "css:finder"],
+        ["xpath=//textarea[@id='message']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//textarea", "xpath:position"]
+      ],
+      "value": "Hello"
+    }, {
+      "id": "4f24fa1b-9990-4d64-bd39-b77e22eac35b",
+      "comment": "",
+      "command": "click",
+      "target": "id=file_input",
+      "targets": [
+        ["id=file_input", "id"],
+        ["name=image", "name"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #file_input", "css:finder"],
+        ["xpath=//input[@id='file_input']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9ab04231-e3cd-4557-b658-5fe402d7be15",
+      "comment": "",
+      "command": "type",
+      "target": "id=file_input",
+      "targets": [
+        ["id=file_input", "id"],
+        ["name=image", "name"],
+        ["css=div:nth-child(2) > .m-2 > .w-full #file_input", "css:finder"],
+        ["xpath=//input[@id='file_input']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\default-class-avatar_ipetqv.jpg"
+    }, {
+      "id": "7b8758ed-01e3-417e-a705-fa96a5f0ee52",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(2) > .m-2 > .w-full .shadow",
+      "targets": [
+        ["css=div:nth-child(2) > .m-2 > .w-full .shadow", "css:finder"],
+        ["xpath=(//button[@type='submit'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Topic')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "9aa4962b-37c0-4a1c-b89d-95e17b5ec92c",
+      "comment": "",
+      "command": "click",
+      "target": "name=topicName",
+      "targets": [
+        ["name=topicName", "name"],
+        ["css=div:nth-child(3) #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1485acd9-fbc6-47fc-90fc-c792055f5579",
+      "comment": "",
+      "command": "type",
+      "target": "name=topicName",
+      "targets": [
+        ["name=topicName", "name"],
+        ["css=div:nth-child(3) #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": "Cluster"
+    }, {
+      "id": "e880f553-f7b3-4ba2-a70f-77aae3e30d4f",
+      "comment": "",
+      "command": "click",
+      "target": "name=course",
+      "targets": [
+        ["name=course", "name"],
+        ["css=div:nth-child(3) #category", "css:finder"],
+        ["xpath=(//select[@id='category'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div/div[2]/select", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div/div[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "47f1c019-7f79-4992-ae97-040fbaccb0ed",
+      "comment": "",
+      "command": "select",
+      "target": "name=course",
+      "targets": [],
+      "value": "label=MongoDB"
+    }, {
+      "id": "d353ac2c-f183-4882-bfa1-69dd9b659092",
+      "comment": "",
+      "command": "click",
+      "target": "name=topicDescription",
+      "targets": [
+        ["name=topicDescription", "name"],
+        ["css=div:nth-child(3) #message", "css:finder"],
+        ["xpath=(//textarea[@id='message'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div[2]/div/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e81bf88-1b68-4126-b3c6-e662e1a082e1",
+      "comment": "",
+      "command": "type",
+      "target": "name=topicDescription",
+      "targets": [
+        ["name=topicDescription", "name"],
+        ["css=div:nth-child(3) #message", "css:finder"],
+        ["xpath=(//textarea[@id='message'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div[2]/div/textarea", "xpath:position"]
+      ],
+      "value": "Hi"
+    }, {
+      "id": "00c92c2f-c4cb-4816-8d91-31113815d8c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) > .m-2 #file_input",
+      "targets": [
+        ["css=div:nth-child(3) > .m-2 #file_input", "css:finder"],
+        ["xpath=(//input[@id='file_input'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bbda4309-4b6d-490b-8a87-36b3f9e0c552",
+      "comment": "",
+      "command": "type",
+      "target": "css=div:nth-child(3) > .m-2 #file_input",
+      "targets": [
+        ["css=div:nth-child(3) > .m-2 #file_input", "css:finder"],
+        ["xpath=(//input[@id='file_input'])[2]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\fav_icon_kggp1y-removebg-preview.png"
+    }, {
+      "id": "7bbefd3f-4c4f-421e-87d1-62834c971275",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(3) .shadow",
+      "targets": [
+        ["css=div:nth-child(3) .shadow", "css:finder"],
+        ["xpath=(//button[@type='submit'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[3]/div/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[3]/div/form/div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Course')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "af2594e1-11e9-4b9b-b3ee-b254bad79b99",
+      "comment": "",
+      "command": "click",
+      "target": "name=teacherName",
+      "targets": [
+        ["name=teacherName", "name"],
+        ["css=div:nth-child(4) #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e3d2ec7a-3c97-4679-865e-d4c41ad275ee",
+      "comment": "",
+      "command": "type",
+      "target": "name=teacherName",
+      "targets": [
+        ["name=teacherName", "name"],
+        ["css=div:nth-child(4) #grid-first-name", "css:finder"],
+        ["xpath=(//input[@id='grid-first-name'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div/div/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div/div/input", "xpath:position"]
+      ],
+      "value": "Creating Cluster"
+    }, {
+      "id": "012a2d78-e4cc-4702-8a8e-9b2853ca8caf",
+      "comment": "",
+      "command": "click",
+      "target": "id=topicName",
+      "targets": [
+        ["id=topicName", "id"],
+        ["css=#topicName", "css:finder"],
+        ["xpath=//select[@id='topicName']", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div/div[2]/select", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div/div[2]/select", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c3c707e-6d80-461c-be4f-5218d11bf886",
+      "comment": "",
+      "command": "select",
+      "target": "id=topicName",
+      "targets": [],
+      "value": "label=Cluster"
+    }, {
+      "id": "abcc59aa-f442-4d03-90ab-55368960ffc9",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) #message",
+      "targets": [
+        ["css=div:nth-child(4) #message", "css:finder"],
+        ["xpath=(//textarea[@id='message'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div[2]/div/textarea", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de5cea34-0177-4be6-ae3f-b9cbb048fecd",
+      "comment": "",
+      "command": "type",
+      "target": "css=div:nth-child(4) #message",
+      "targets": [
+        ["css=div:nth-child(4) #message", "css:finder"],
+        ["xpath=(//textarea[@id='message'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div[2]/div/textarea", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div[2]/div/textarea", "xpath:position"]
+      ],
+      "value": "Cluster"
+    }, {
+      "id": "be13e3f2-6c18-42d1-8c2a-bb05f4180450",
+      "comment": "",
+      "command": "click",
+      "target": "name=course-video",
+      "targets": [
+        ["name=course-video", "name"],
+        ["css=div:nth-child(4) #file_input", "css:finder"],
+        ["xpath=(//input[@id='file_input'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d1e260e6-6e55-4e26-8e3a-e0f3e3cf65a7",
+      "comment": "",
+      "command": "type",
+      "target": "name=course-video",
+      "targets": [
+        ["name=course-video", "name"],
+        ["css=div:nth-child(4) #file_input", "css:finder"],
+        ["xpath=(//input[@id='file_input'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div[3]/input", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div[3]/input", "xpath:position"]
+      ],
+      "value": "C:\\fakepath\\Save-Sundarbans - Google Chrome 2022-10-01 01-24-57.mp4"
+    }, {
+      "id": "0c19d836-4351-4c3c-9b22-74f65a6fe0cb",
+      "comment": "",
+      "command": "click",
+      "target": "css=div:nth-child(4) > .m-2 .shadow",
+      "targets": [
+        ["css=div:nth-child(4) > .m-2 .shadow", "css:finder"],
+        ["xpath=(//button[@type='submit'])[4]", "xpath:attributes"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[4]/div/form/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/div/form/div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Add Content')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }]
+  }, {
+    "id": "303313f4-2d4e-4a25-9b8f-194539489a95",
+    "name": "Audio Courses",
+    "commands": [{
+      "id": "9967cc51-40a1-4299-8011-0548c792ec6f",
+      "comment": "",
+      "command": "open",
+      "target": "http://localhost:3001/audio-courses",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1485c988-543e-4afa-8f28-4a99917f6138",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x880",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "654468e3-fc59-4159-b047-1cb6f6730e6d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.md\\3Aw-1\\/2:nth-child(1)",
+      "targets": [
+        ["css=.md\\3Aw-1\\/2:nth-child(1)", "css:finder"],
+        ["xpath=//div[@id='root']/div/div/div[3]/div[2]/div/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[3]/div[2]/div/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "c2f3c114-141b-4e95-9acd-61ca290f19d6",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["http://localhost:3001/select-courses", "http://localhost:3001/", "http://localhost:3001/audio-courses"],
+  "plugins": []
+}
