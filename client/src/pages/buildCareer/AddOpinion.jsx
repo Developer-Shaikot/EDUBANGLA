@@ -1,39 +1,27 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Header } from "../../components";
-// import { useAddCategoryMutation } from "../../services/apiSlice";
 
 const initialData = { name: "", description: "", category: "" };
 
 const AddOpinion = () => {
 	const [formData, setFormData] = useState(initialData);
-	// const [addCategory, responseInfo] = useAddCategoryMutation();
 
 	const handleSubmit = (e) => {
-		// e.preventDefault();
-		// console.log(formData);
-		// addCategory({ formData })
-		// 	.unwrap()
-		// 	.then((res) => {
-		// 		if (res.status === "added") {
-		// 			toast.success("New category added");
-		// 			e.target.reset();
-		// 			setFormData(initialData);
-		// 		} else {
-		// 			toast.error("Couldn't add the category");
-		// 		}
-		// 	})
-		// 	.catch((e) => toast.error(e.message));
+		e.preventDefault();
+		e.target.reset();
+		toast.info("Opinion added");
+		setFormData(initialData);
 	};
 
 	const handleOnChange = (e) => {
-		// if (e.target.name === "category") {
-		// 	return setFormData((prev) => ({
-		// 		...prev,
-		// 		category: e.target.files[0],
-		// 	}));
-		// }
-		// setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+		if (e.target.name === "category") {
+			return setFormData((prev) => ({
+				...prev,
+				category: e.target.files[0],
+			}));
+		}
+		setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 
 	return (

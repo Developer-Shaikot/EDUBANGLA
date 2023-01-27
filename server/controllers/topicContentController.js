@@ -3,33 +3,30 @@ const TopicContent = require("../models/TopicContentModel");
 const cloudinary = require("../utils/cloudinaryHandler");
 
 exports.addTopicContent = expressAsyncHandler(async (req, res) => {
-	const results = await Promise.all([
-		handleUpload(req, "topic-img", "images"),
-		handleUpload(req, "topic-video", "videos"),
-	]);
-
-	let imgRes, vidRes;
-
-	results.forEach((result) => {
-		if (result.resource_type === "image") {
-			imgRes = result;
-		} else {
-			vidRes = result;
-		}
+	const results = await cloudinary.uploader.upload(req.file?.path, {
+		resource_type: "video",
+		folder: "eduBangla/videos",
 	});
 
 	const newTopic = await new TopicContent({
 		...req.body,
-		topicImg: imgRes ? imgRes.secure_url : "",
-		topicImgCloudinaryId: imgRes ? imgRes.public_id : "",
-		topicVideo: vidRes ? vidRes.secure_url : "",
-		topicVideoCloudinaryId: vidRes ? vidRes.public_id : "",
+		topic: "63d3ff0595122ea6d61c4b72",
+		topicVideo: results ? results.secure_url : "",
+		topicVideoCloudinaryId: results ? results.public_id : "",
 	}).save();
 
-	res.status(201).json({
-		success: true,
-		message: "New topic content added successfully",
-		topic: newTopic,
+	if (newTopic) {
+		return res.status(201).json({
+			success: true,
+			message: "New topic content added successfully",
+			topic: newTopic,
+		});
+	}
+
+	res.status(500).json({
+		success: false,
+		message: "Content not added",
+		topic: "",
 	});
 });
 
@@ -51,14 +48,4 @@ exports.getTopicContent = expressAsyncHandler(async (req, res) => {
 		message: "Topic content not found",
 		topicContents: null,
 	});
-});
-
-const handleUpload = expressAsyncHandler((req, type, folderName) => {
-	if (req.files?.[type]?.[0]) {
-		return cloudinary.uploader.upload(req.files[type][0].path, {
-			resource_type: folderName.slice(0, -1),
-			folder: "eduBangla/" + folderName,
-		});
-	}
-	return false;
 });

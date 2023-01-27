@@ -108,11 +108,21 @@ export const api = createApi({
 			providesTags: ["content"],
 		}),
 		addTopicContent: builder.mutation({
-			query: (formData) => ({
-				url: `api/topicContent/add`,
-				method: "POST",
-				body: formData,
-			}),
+			query: (formData) => {
+				const payload = new FormData();
+				
+				payload.append("topic", formData.topic);
+				payload.append("teacherName", formData.teacherName);
+				payload.append("topicName", formData.topicName);
+				payload.append("description", formData.description);
+				payload.append("topic-video", formData.video);
+
+				return {
+					url: `api/topicContent/add`,
+					method: "POST",
+					body: payload,
+				};
+			},
 			invalidatesTags: ["content"],
 		}),
 	}),

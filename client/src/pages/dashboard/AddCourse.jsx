@@ -10,8 +10,6 @@ const AddCourse = () => {
 	const [addCategory, responseInfo] = useAddCourseMutation();
 	const classInfo = useGetClassesQuery();
 
-	console.log(classInfo.data);
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		addCategory(formData)

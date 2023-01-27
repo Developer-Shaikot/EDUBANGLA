@@ -3,7 +3,6 @@ const Topic = require("../models/TopicModel");
 const cloudinary = require("../utils/cloudinaryHandler");
 
 exports.addTopic = expressAsyncHandler(async (req, res) => {
-	console.log(req.body);
 	const newTopic = await new Topic(req.body).save();
 
 	res.status(201).json({

@@ -16,7 +16,10 @@ const topicContentSchema = new Schema(
 			type: String,
 			required: true,
 		},
-		topicVideo: String,
+		topicVideo: {
+			type: String,
+			required: true,
+		},
 		topicVideoCloudinaryId: String,
 		views: {
 			type: Number,

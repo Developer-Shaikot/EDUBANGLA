@@ -9,14 +9,14 @@ const initialData = {
 	description: "",
 	topicVideo: "",
 	category: "",
-	image: "",
+	video: "",
 };
 
 const TopicContent = () => {
 	const [formData, setFormData] = useState(initialData);
 	const [addCategory, topicResponseInfo] = useAddTopicContentMutation();
 	const responseInfo = useViewTopicQuery();
-console.log(responseInfo);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		addCategory(formData)
@@ -34,10 +34,10 @@ console.log(responseInfo);
 	};
 
 	const handleOnChange = (e) => {
-		if (e.target.name === "course-video") {
+		if (e.target.name === "topicVideo") {
 			return setFormData((prev) => ({
 				...prev,
-				image: e.target.files[0],
+				video: e.target.files[0],
 			}));
 		}
 
@@ -134,9 +134,8 @@ console.log(responseInfo);
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 						id="file_input"
 						type="file"
-						name="course-video"
-						defaultValue={formData.image}
-						accept="video/*"
+						name="topicVideo"
+						defaultValue={formData.topicVideo}
 					/>
 				</div>
 

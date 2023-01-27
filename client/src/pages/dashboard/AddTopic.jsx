@@ -10,8 +10,6 @@ const AddTopic = () => {
 	const [addCategory, responseInfo] = useAddTopicMutation();
 	const courseInfo = useViewCoursesQuery();
 
-	console.log(courseInfo.data);
-
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		addCategory(formData)
