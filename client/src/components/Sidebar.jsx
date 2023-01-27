@@ -29,11 +29,15 @@ const Sidebar = () => {
 							onClick={handleCloseSideBar}
 							className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
 						>
-							<img style={{
-											width: "55px",
-											marginTop: "8px",
-										}}
-										src="https://res.cloudinary.com/hostingimagesservice/image/upload/v1674810133/eduBangla/images/eduBangla-logo_i0wzjc.png" alt="" /> <span className="mt-3">EduBangla</span>
+							<img
+								style={{
+									width: "55px",
+									marginTop: "8px",
+								}}
+								src="https://res.cloudinary.com/hostingimagesservice/image/upload/v1674810133/eduBangla/images/eduBangla-logo_i0wzjc.png"
+								alt=""
+							/>{" "}
+							<span className="mt-3">EduBangla</span>
 						</Link>
 						<TooltipComponent content="Menu" position="BottomCenter">
 							<button

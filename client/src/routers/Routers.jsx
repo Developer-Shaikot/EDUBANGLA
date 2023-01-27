@@ -14,6 +14,7 @@ import ViewTopic from "../pages/general/ViewTopic";
 import ViewContent from "../pages/general/ViewContent";
 import Login from "../pages/login/Login";
 import Register from "./../pages/register/Register";
+import IsAlreadyLoggedIn from "./IsAlreadyLoggedIn";
 
 const Routers = () => {
 	return (
@@ -26,8 +27,22 @@ const Routers = () => {
 					</IsLoggedIn>
 				}
 			/>
-			<Route path="/register" element={<Register />} />
-			<Route path="/login" element={<Login />} />
+			<Route
+				path="/register"
+				element={
+					<IsAlreadyLoggedIn>
+						<Register />
+					</IsAlreadyLoggedIn>
+				}
+			/>
+			<Route
+				path="/login"
+				element={
+					<IsAlreadyLoggedIn>
+						<Login />
+					</IsAlreadyLoggedIn>
+				}
+			/>
 			<Route
 				path="/select-courses"
 				element={
