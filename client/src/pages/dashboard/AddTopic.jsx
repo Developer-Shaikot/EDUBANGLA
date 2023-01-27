@@ -1,40 +1,33 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Header } from "../../components";
-// import { useAddCategoryMutation } from "../../services/apiSlice";
+import { useAddTopicMutation, useViewCoursesQuery } from "../../services/apiSlice";
 
-const initialData = { name: "", description: "", category: "" };
+const initialData = { course: "", topicName: "", topicDescription: "", topicImg: "" };
 
 const AddTopic = () => {
 	const [formData, setFormData] = useState(initialData);
-	// const [addCategory, responseInfo] = useAddCategoryMutation();
+	const [addCategory, responseInfo] = useAddTopicMutation();
+	const courseInfo = useViewCoursesQuery();
 
 	const handleSubmit = (e) => {
-		// e.preventDefault();
-		// console.log(formData);
-		// addCategory({ formData })
-		// 	.unwrap()
-		// 	.then((res) => {
-		// 		if (res.status === "added") {
-		// 			toast.success("New category added");
-		// 			e.target.reset();
-		// 			setFormData(initialData);
-		// 		} else {
-		// 			toast.error("Couldn't add the category");
-		// 		}
-		// 	})
-		// 	.catch((e) => toast.error(e.message));
+		e.preventDefault();
+		addCategory(formData)
+			.unwrap()
+			.then((res) => {
+				if (res.status === "added") {
+					toast.success("New category added");
+					e.target.reset();
+					setFormData(initialData);
+				} else {
+					toast.error("Couldn't add the category");
+				}
+			})
+			.catch((e) => toast.error(e.message));
 	};
 
 	const handleOnChange = (e) => {
-		// if (e.target.name === "category") {
-		// 	return setFormData((prev) => ({
-		// 		...prev,
-		// 		category: e.target.files[0],
-		// 	}));
-		// }
-
-		// setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+		setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 
 	return (
@@ -59,8 +52,8 @@ const AddTopic = () => {
 							id="grid-first-name"
 							type="text"
 							placeholder="name"
-							name="name"
-							value={formData.name}
+							name="topicName"
+							value={formData.topicName}
 						/>
 					</div>
 					<div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -73,20 +66,18 @@ const AddTopic = () => {
 						<select
 							id="category"
 							name="category"
-							value={formData.category}
+							value={formData.course}
 							required
 							onChange={handleOnChange}
 							className="block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 						>
-							<option value="">
-								--Select course--
-							</option>
-							{/* {categoryListInfo.isSuccess &&
-								categoryListInfo.data?.allCategories?.map((category, i) => (
-									<option key={i} value={category._id}>
-										{category.name}
+							<option value="">--Select course--</option>
+							{courseInfo.isSuccess &&
+								courseInfo.data?.topic?.map((topic, i) => (
+									<option key={i} value={topic._id}>
+										{topic.topicName}
 									</option>
-								))} */}
+								))}
 						</select>
 					</div>
 				</div>
@@ -96,7 +87,7 @@ const AddTopic = () => {
 							htmlFor="message"
 							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
 						>
-							Description
+							Topic Description
 						</label>
 						<textarea
 							required
@@ -105,8 +96,8 @@ const AddTopic = () => {
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
 							type="message"
 							placeholder="Write details here..."
-							name="description"
-							value={formData.description}
+							name="topicDescription"
+							value={formData.topicDescription}
 							onChange={handleOnChange}
 						/>
 						<p className="text-gray-600 text-xs italic">
@@ -114,7 +105,6 @@ const AddTopic = () => {
 						</p>
 					</div>
 				</div>
-
 
 				<div className="w-full my-6 md:mb-0">
 					<label
@@ -124,9 +114,8 @@ const AddTopic = () => {
 						Course Image
 					</label>
 					<input
-						required
 						onChange={handleOnChange}
-						// disabled={responseInfo.isLoading}
+						disabled={responseInfo.isLoading}
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 						id="file_input"
 						type="file"
