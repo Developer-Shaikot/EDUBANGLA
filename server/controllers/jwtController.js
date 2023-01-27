@@ -5,6 +5,5 @@ exports.generateToken = function generateToken(user) {
 };
 
 exports.verifyToken = function verifyToken(token) {
-	console.log(token);
 	return jwt.verify(token, process.env.JWT_SECRET);
 };

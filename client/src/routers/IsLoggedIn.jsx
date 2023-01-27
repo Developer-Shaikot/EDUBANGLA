@@ -4,7 +4,6 @@ import Loading from "../components/loading/Loading";
 
 const IsLoggedIn = ({ children }) => {
 	const responseInfo = useIsLoggedInQuery();
-	console.log(responseInfo.data);
 	if (responseInfo.isSuccess && responseInfo.data?.status) {
 		return children;
 	} else if (responseInfo.isLoading) return <Loading />;
