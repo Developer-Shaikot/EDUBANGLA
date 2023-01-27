@@ -5,7 +5,7 @@ import { Header } from "../../components";
 
 const initialData = { name: "", description: "", category: "" };
 
-const TopicContent = () => {
+const AddOpinion = () => {
 	const [formData, setFormData] = useState(initialData);
 	// const [addCategory, responseInfo] = useAddCategoryMutation();
 
@@ -40,7 +40,7 @@ const TopicContent = () => {
 	return (
 		<div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
 			<div className="mb-10">
-				<Header  title="Topic Content" />
+				<Header category="Topic" title="Add Topic" />
 			</div>
 
 			<form className="w-full" onSubmit={handleSubmit}>
@@ -50,7 +50,7 @@ const TopicContent = () => {
 							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
 							htmlFor="grid-first-name"
 						>
-							Teacher Name
+							Name
 						</label>
 						<input
 							required
@@ -65,29 +65,21 @@ const TopicContent = () => {
 					</div>
 					<div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
 						<label
-							htmlFor="category"
 							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+							htmlFor="grid-first-name"
 						>
-							Topic Name
+							Email
 						</label>
-						<select
-							id="category"
-							name="category"
-							value={formData.category}
+						<input
 							required
 							onChange={handleOnChange}
-							className="block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-						>
-							<option value="">
-								--Select course--
-							</option>
-							{/* {categoryListInfo.isSuccess &&
-								categoryListInfo.data?.allCategories?.map((category, i) => (
-									<option key={i} value={category._id}>
-										{category.name}
-									</option>
-								))} */}
-						</select>
+							className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+							id="grid-first-name"
+							type="text"
+							placeholder="name"
+							name="name"
+							value={formData.name}
+						/>
 					</div>
 				</div>
 				<div className="flex flex-wrap -mx-3 mb-6">
@@ -121,7 +113,7 @@ const TopicContent = () => {
 						className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
 						htmlFor="file_input"
 					>
-						Topic Video
+						Course Image
 					</label>
 					<input
 						required
@@ -130,9 +122,9 @@ const TopicContent = () => {
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 						id="file_input"
 						type="file"
-						name="course video"
+						name="image"
 						defaultValue={formData.image}
-						accept="video/*"
+						accept="image/*"
 					/>
 				</div>
 
@@ -141,7 +133,7 @@ const TopicContent = () => {
 						className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5"
 						type="submit"
 					>
-						Add Content
+						Add Course
 					</button>
 				</div>
 			</form>
@@ -149,4 +141,4 @@ const TopicContent = () => {
 	);
 };
 
-export default TopicContent;
+export default AddOpinion;

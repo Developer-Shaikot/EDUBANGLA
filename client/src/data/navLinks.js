@@ -1,4 +1,4 @@
-import { AiOutlinePicCenter } from "react-icons/ai";
+import { AiOutlineCloudUpload } from "react-icons/ai";
 import { GoFileSubmodule } from "react-icons/go";
 import { FaFileAudio } from "react-icons/fa";
 import { MdOutlineContacts, MdOutlinePostAdd, MdWorkOutline } from "react-icons/md";
@@ -9,9 +9,9 @@ export const links = [
 		title: "Dashboard",
 		links: [
 			{
-				name: "Academy",
+				name: "Upload Content",
 				route: "",
-				icon: <AiOutlinePicCenter />,
+				icon: <AiOutlineCloudUpload />,
 			},
 		],
 	},
