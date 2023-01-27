@@ -17,7 +17,7 @@ const AddTopic = () => {
 		addCategory(formData)
 			.unwrap()
 			.then((res) => {
-				if (res.status === "added") {
+				if (res.success) {
 					toast.success("New category added");
 					e.target.reset();
 					setFormData(initialData);
@@ -67,7 +67,7 @@ const AddTopic = () => {
 						</label>
 						<select
 							id="category"
-							name="category"
+							name="course"
 							value={formData.course}
 							required
 							onChange={handleOnChange}
