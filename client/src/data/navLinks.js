@@ -20,7 +20,7 @@ export const links = [
 		title: "General",
 		links: [
 			{
-				name: "Select Courses",
+				name: "Select Classes",
 				route: "select-courses",
 				icon: <GoFileSubmodule />,
 			},
