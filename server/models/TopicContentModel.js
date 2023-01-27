@@ -18,7 +18,10 @@ const topicContentSchema = new Schema(
 		},
 		topicVideo: String,
 		topicVideoCloudinaryId: String,
-		views: Number,
+		views: {
+			type: Number,
+			default: 0,
+		},
 	},
 	{ timestamps: true }
 );

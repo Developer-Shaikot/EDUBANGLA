@@ -33,14 +33,13 @@ const AddOpinion = () => {
 		// 		category: e.target.files[0],
 		// 	}));
 		// }
-
 		// setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 
 	return (
 		<div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
 			<div className="mb-10">
-				<Header category="Topic" title="Add Topic" />
+				<Header category="Opinion" title="Share Opinion" />
 			</div>
 
 			<form className="w-full" onSubmit={handleSubmit}>
@@ -107,33 +106,12 @@ const AddOpinion = () => {
 					</div>
 				</div>
 
-
-				<div className="w-full my-6 md:mb-0">
-					<label
-						className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-						htmlFor="file_input"
-					>
-						Course Image
-					</label>
-					<input
-						required
-						onChange={handleOnChange}
-						// disabled={responseInfo.isLoading}
-						className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-						id="file_input"
-						type="file"
-						name="image"
-						defaultValue={formData.image}
-						accept="image/*"
-					/>
-				</div>
-
 				<div className="md:w-2/3">
 					<button
 						className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5"
 						type="submit"
 					>
-						Add Course
+						Share Opinion
 					</button>
 				</div>
 			</form>

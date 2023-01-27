@@ -1,46 +1,53 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Header } from "../../components";
-// import { useAddCategoryMutation } from "../../services/apiSlice";
+import { useAddTopicContentMutation, useViewTopicQuery } from "../../services/apiSlice";
 
-const initialData = { name: "", description: "", category: "" };
+const initialData = {
+	teacherName: "",
+	topicName: "",
+	description: "",
+	topicVideo: "",
+	category: "",
+	image: "",
+};
 
 const TopicContent = () => {
 	const [formData, setFormData] = useState(initialData);
-	// const [addCategory, responseInfo] = useAddCategoryMutation();
-
+	const [addCategory, topicResponseInfo] = useAddTopicContentMutation();
+	const responseInfo = useViewTopicQuery();
+console.log(responseInfo);
 	const handleSubmit = (e) => {
-		// e.preventDefault();
-		// console.log(formData);
-		// addCategory({ formData })
-		// 	.unwrap()
-		// 	.then((res) => {
-		// 		if (res.status === "added") {
-		// 			toast.success("New category added");
-		// 			e.target.reset();
-		// 			setFormData(initialData);
-		// 		} else {
-		// 			toast.error("Couldn't add the category");
-		// 		}
-		// 	})
-		// 	.catch((e) => toast.error(e.message));
+		e.preventDefault();
+		addCategory(formData)
+			.unwrap()
+			.then((res) => {
+				if (res.success) {
+					toast.success("New category added");
+					e.target.reset();
+					setFormData(initialData);
+				} else {
+					toast.error("Couldn't add the category");
+				}
+			})
+			.catch((e) => toast.error(e.message));
 	};
 
 	const handleOnChange = (e) => {
-		// if (e.target.name === "category") {
-		// 	return setFormData((prev) => ({
-		// 		...prev,
-		// 		category: e.target.files[0],
-		// 	}));
-		// }
+		if (e.target.name === "course-video") {
+			return setFormData((prev) => ({
+				...prev,
+				image: e.target.files[0],
+			}));
+		}
 
-		// setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+		setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 
 	return (
 		<div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
 			<div className="mb-10">
-				<Header  title="Topic Content" />
+				<Header title="Topic Content" />
 			</div>
 
 			<form className="w-full" onSubmit={handleSubmit}>
@@ -59,8 +66,8 @@ const TopicContent = () => {
 							id="grid-first-name"
 							type="text"
 							placeholder="name"
-							name="name"
-							value={formData.name}
+							name="teacherName"
+							value={formData.teacherName}
 						/>
 					</div>
 					<div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -71,22 +78,20 @@ const TopicContent = () => {
 							Topic Name
 						</label>
 						<select
-							id="category"
-							name="category"
-							value={formData.category}
+							id="topicName"
+							name="topicName"
+							value={formData.topicName}
 							required
 							onChange={handleOnChange}
 							className="block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 						>
-							<option value="">
-								--Select course--
-							</option>
-							{/* {categoryListInfo.isSuccess &&
-								categoryListInfo.data?.allCategories?.map((category, i) => (
-									<option key={i} value={category._id}>
-										{category.name}
+							<option value="">--Select course--</option>
+							{responseInfo.isSuccess &&
+								responseInfo.data?.topic?.map((topic, i) => (
+									<option key={i} value={topic._id}>
+										{topic.topicName}
 									</option>
-								))} */}
+								))}
 						</select>
 					</div>
 				</div>
@@ -115,7 +120,6 @@ const TopicContent = () => {
 					</div>
 				</div>
 
-
 				<div className="w-full my-6 md:mb-0">
 					<label
 						className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -126,11 +130,11 @@ const TopicContent = () => {
 					<input
 						required
 						onChange={handleOnChange}
-						// disabled={responseInfo.isLoading}
+						disabled={responseInfo.isLoading}
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 						id="file_input"
 						type="file"
-						name="course video"
+						name="course-video"
 						defaultValue={formData.image}
 						accept="video/*"
 					/>

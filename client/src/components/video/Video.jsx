@@ -1,5 +1,4 @@
 import React from "react";
-import { AiOutlineLike } from "react-icons/ai";
 
 const Video = ({ title, src, description }) => {
 	return (
