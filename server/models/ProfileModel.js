@@ -8,10 +8,16 @@ const profileSchema = new Schema(
 			trim: true,
 		},
 		profilePicture: String,
+		profilePictureCloudinaryId: String,
 		about: String,
 		email: {
 			type: String,
 			lowercase: true,
+		},
+		user: {
+			type: Schema.Types.ObjectId,
+			ref: "User",
+			required: true,
 		},
 	},
 	{
