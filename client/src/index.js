@@ -1,15 +1,18 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-
-import './index.css';
-import App from './App';
-import { ContextProvider } from './contexts/ContextProvider';
+import React from "react";
+import ReactDOM from "react-dom";
+import store  from "./store";
+import "./index.css";
+import App from "./App";
+import { ContextProvider } from "./contexts/ContextProvider";
+import { Provider } from "react-redux";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <ContextProvider>
-      <App />
-    </ContextProvider>
-  </React.StrictMode>,
-  document.getElementById('root'),
+	<React.StrictMode>
+		<Provider store={store}>
+			<ContextProvider>
+				<App />
+			</ContextProvider>
+		</Provider>
+	</React.StrictMode>,
+	document.getElementById("root")
 );

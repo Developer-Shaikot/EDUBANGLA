@@ -70,3 +70,7 @@ exports.logoutUser = expressAsyncHandler(async (req, res) => {
 		message: "Logout successful",
 	});
 });
+
+exports.isLoggedIn = expressAsyncHandler(async (req, res) => {
+	
+})

@@ -16,12 +16,9 @@ const topicContentModel = new Schema(
 			type: String,
 			required: true,
 		},
-		topicImg: String,
-		topicImgCloudinaryId: String,
 		topicVideo: String,
 		topicVideoCloudinaryId: String,
-		topicAudio: String,
-		topicAudioCloudinaryId: String,
+		views: Number,
 	},
 	{ timestamps: true }
 );
