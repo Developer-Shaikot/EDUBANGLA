@@ -1,7 +1,7 @@
 const homeRoute = require("./homeRoute");
 const userRoute = require("./userRoute");
 const courseRoute = require("./courseRoute");
-const topicRoute = require("./topicRoute");
+const topicRoute = require("./topicContentRoute");
 const profileRoute = require("./profileRoute");
 const classRoute = require("./classRoute");
 

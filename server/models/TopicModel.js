@@ -1,29 +1,24 @@
 const { Schema, model } = require("mongoose");
 
-const topicSchema = new Schema(
-	{
-		course: {
-			type: Schema.Types.ObjectId,
-			ref: "Course",
-		},
-		teacherName: String,
-		topicName: {
-			type: String,
-			required: true,
-			trim: true,
-		},
-		description: {
-			type: String,
-			required: true,
-		},
-		topicImg: String,
-		topicImgCloudinaryId: String,
-		topicVideo: String,
-		topicVideoCloudinaryId: String,
-		topicAudio: String,
-		topicAudioCloudinaryId: String,
+const topicSchema = new Schema({
+	course: {
+		type: Schema.Types.ObjectId,
+		ref: "Course",
+		required: true,
 	},
-	{ timestamps: true }
-);
+	topicName: {
+		type: String,
+		required: true,
+	},
+	topicImg: {
+		type: String,
+		default:
+			"https://res.cloudinary.com/hostingimagesservice/image/upload/v1674792388/eduBangla/images/fav_icon_kggp1y_fcacpk.png",
+	},
+	topicDescription: {
+		type: String,
+		maxLength: 1000,
+	},
+});
 
 module.exports = model("Topic", topicSchema);

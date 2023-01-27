@@ -1,15 +1,7 @@
 const router = require("express").Router();
-const upload = require("../middlewares/upload");
-const { addTopic } = require("../controllers/topicController");
+const { addTopic, getTopics } = require("../controllers/topicController");
 
-router.post(
-	"/add",
-	upload.fields([
-		{ name: "topic-img", maxCount: 1 },
-		{ name: "topic-video", maxCount: 1 },
-		{ name: "topic-audio", maxCount: 1 },
-	]),
-	addTopic
-);
+router.get("/", getTopics);
+router.post("/add", addTopic);
 
 module.exports = router;
