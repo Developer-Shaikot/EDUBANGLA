@@ -2,6 +2,11 @@ const { Schema, model } = require("mongoose");
 
 const courseSchema = new Schema(
 	{
+		class: {
+			type: Schema.Types.ObjectId,
+			ref: "Class",
+			required: true,
+		},
 		courseName: {
 			type: String,
 			trim: true,
