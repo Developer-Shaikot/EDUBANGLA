@@ -5,7 +5,7 @@ import { Header } from "../../components";
 
 const initialData = { name: "", description: "", category: "" };
 
-const AddCourse = () => {
+const AddTopic = () => {
 	const [formData, setFormData] = useState(initialData);
 	// const [addCategory, responseInfo] = useAddCategoryMutation();
 
@@ -40,7 +40,7 @@ const AddCourse = () => {
 	return (
 		<div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
 			<div className="mb-10">
-				<Header category="Course" title="Add Course" />
+				<Header category="Topic" title="Add Topic" />
 			</div>
 
 			<form className="w-full" onSubmit={handleSubmit}>
@@ -50,7 +50,7 @@ const AddCourse = () => {
 							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
 							htmlFor="grid-first-name"
 						>
-							Course Name
+							Topic Name
 						</label>
 						<input
 							required
@@ -121,7 +121,7 @@ const AddCourse = () => {
 						className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
 						htmlFor="file_input"
 					>
-						Topic Image
+						Course Image
 					</label>
 					<input
 						required
@@ -141,7 +141,7 @@ const AddCourse = () => {
 						className="shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5"
 						type="submit"
 					>
-						Add Topic
+						Add Course
 					</button>
 				</div>
 			</form>
@@ -149,4 +149,4 @@ const AddCourse = () => {
 	);
 };
 
-export default AddCourse;
+export default AddTopic;

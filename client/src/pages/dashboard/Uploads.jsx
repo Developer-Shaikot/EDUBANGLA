@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Header } from "../../components";
 import AddCourse from "./AddCourse";
+import AddTopic from "./AddTopic";
 // import { useAddCategoryMutation } from "../../services/apiSlice";
 
 const initialData = { name: "", description: "", category: "" };
@@ -74,13 +75,17 @@ const Uploads = () => {
 						type="submit"
 						// disabled={responseInfo.isLoading}
 					>
-						Add Category
+						Add Class
 					</button>
 				</div>
 			</form>
 
             <div>
                 <AddCourse/>
+            </div>
+
+            <div>
+                <AddTopic/>
             </div>
 		</div>
 	);

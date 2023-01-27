@@ -5,7 +5,7 @@ import { Header } from "../../components";
 
 const initialData = { name: "", description: "", category: "" };
 
-const AddCourse = () => {
+const TopicContent = () => {
 	const [formData, setFormData] = useState(initialData);
 	// const [addCategory, responseInfo] = useAddCategoryMutation();
 
@@ -149,4 +149,4 @@ const AddCourse = () => {
 	);
 };
 
-export default AddCourse;
+export default TopicContent;
