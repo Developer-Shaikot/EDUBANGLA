@@ -34,9 +34,8 @@ const Sidebar = () => {
 							<img style={{
 											width: "55px",
 											marginTop: "8px",
-											marginLeft: "22px",
 										}}
-										src="https://res.cloudinary.com/hostingimagesservice/image/upload/v1674792388/eduBangla/images/fav_icon_kggp1y_fcacpk.png" alt="" /> <span className="mt-3">EduBangla</span>
+										src="https://res.cloudinary.com/hostingimagesservice/image/upload/v1674810133/eduBangla/images/eduBangla-logo_i0wzjc.png" alt="" /> <span className="mt-3">EduBangla</span>
 						</Link>
 						<TooltipComponent content="Menu" position="BottomCenter">
 							<button
