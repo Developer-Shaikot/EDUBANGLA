@@ -1,40 +1,35 @@
 import React, { useState } from "react";
 import { toast } from "react-toastify";
 import { Header } from "../../components";
-// import { useAddCategoryMutation } from "../../services/apiSlice";
+import { useAddCourseMutation, useGetClassesQuery } from "../../services/apiSlice";
 
-const initialData = { name: "", description: "", category: "" };
+const initialData = { class: "", courseName: "", description: "" };
 
 const AddCourse = () => {
 	const [formData, setFormData] = useState(initialData);
-	// const [addCategory, responseInfo] = useAddCategoryMutation();
+	const [addCategory, responseInfo] = useAddCourseMutation();
+	const classInfo = useGetClassesQuery();
+
+	console.log(classInfo.data);
 
 	const handleSubmit = (e) => {
-		// e.preventDefault();
-		// console.log(formData);
-		// addCategory({ formData })
-		// 	.unwrap()
-		// 	.then((res) => {
-		// 		if (res.status === "added") {
-		// 			toast.success("New category added");
-		// 			e.target.reset();
-		// 			setFormData(initialData);
-		// 		} else {
-		// 			toast.error("Couldn't add the category");
-		// 		}
-		// 	})
-		// 	.catch((e) => toast.error(e.message));
+		e.preventDefault();
+		addCategory(formData)
+			.unwrap()
+			.then((res) => {
+				if (res.success) {
+					toast.success("New course added");
+					e.target.reset();
+					setFormData(initialData);
+				} else {
+					toast.error("Couldn't add the category");
+				}
+			})
+			.catch((e) => toast.error(e.message));
 	};
 
 	const handleOnChange = (e) => {
-		// if (e.target.name === "category") {
-		// 	return setFormData((prev) => ({
-		// 		...prev,
-		// 		category: e.target.files[0],
-		// 	}));
-		// }
-
-		// setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+		setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 
 	return (
@@ -59,8 +54,8 @@ const AddCourse = () => {
 							id="grid-first-name"
 							type="text"
 							placeholder="name"
-							name="name"
-							value={formData.name}
+							name="courseName"
+							value={formData.courseName}
 						/>
 					</div>
 					<div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
@@ -72,21 +67,19 @@ const AddCourse = () => {
 						</label>
 						<select
 							id="category"
-							name="category"
-							value={formData.category}
+							name="class"
+							value={formData.class}
 							required
 							onChange={handleOnChange}
 							className="block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 						>
-							<option value="">
-								--Select course--
-							</option>
-							{/* {categoryListInfo.isSuccess &&
-								categoryListInfo.data?.allCategories?.map((category, i) => (
-									<option key={i} value={category._id}>
-										{category.name}
+							<option value="">--Select Class--</option>
+							{classInfo.isSuccess &&
+								classInfo.data?.class?.map((classCon, i) => (
+									<option key={i} value={classCon._id}>
+										{classCon.classTitle}
 									</option>
-								))} */}
+								))}
 						</select>
 					</div>
 				</div>
@@ -115,7 +108,6 @@ const AddCourse = () => {
 					</div>
 				</div>
 
-
 				<div className="w-full my-6 md:mb-0">
 					<label
 						className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -124,9 +116,8 @@ const AddCourse = () => {
 						Topic Image
 					</label>
 					<input
-						required
 						onChange={handleOnChange}
-						// disabled={responseInfo.isLoading}
+						disabled={responseInfo.isLoading}
 						className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-2 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 						id="file_input"
 						type="file"

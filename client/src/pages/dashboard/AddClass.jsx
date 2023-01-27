@@ -1,42 +1,38 @@
-import React, { useState } from 'react';
-import { Header } from '../../components';
-const initialData = { name: "", description: "", category: "" };
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { Header } from "../../components";
+import { useAddClassMutation } from "../../services/apiSlice";
+
+const initialData = { classTitle: "" };
 
 const AddClass = () => {
-    const [formData, setFormData] = useState(initialData);
-	// const [addCategory, responseInfo] = useAddCategoryMutation();
+	const [formData, setFormData] = useState(initialData);
+	const [addCategory, responseInfo] = useAddClassMutation();
 
 	const handleSubmit = (e) => {
-		// e.preventDefault();
-		// console.log(formData);
-		// addCategory({ formData })
-		// 	.unwrap()
-		// 	.then((res) => {
-		// 		if (res.status === "added") {
-		// 			toast.success("New category added");
-		// 			e.target.reset();
-		// 			setFormData(initialData);
-		// 		} else {
-		// 			toast.error("Couldn't add the category");
-		// 		}
-		// 	})
-		// 	.catch((e) => toast.error(e.message));
+		e.preventDefault();
+
+		addCategory(formData)
+			.unwrap()
+			.then((res) => {
+				if (res.success) {
+					toast.success("New class added");
+					e.target.reset();
+					setFormData(initialData);
+				} else {
+					toast.error("Couldn't add the class");
+				}
+			})
+			.catch((e) => toast.error(e.message));
 	};
 
 	const handleOnChange = (e) => {
-		// if (e.target.name === "category") {
-		// 	return setFormData((prev) => ({
-		// 		...prev,
-		// 		category: e.target.files[0],
-		// 	}));
-		// }
-
-		// setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+		setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 
-    return (
-        <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
-            <div className="mb-10">
+	return (
+		<div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
+			<div className="mb-10">
 				<Header category="Dashboard" title="Add Classes" />
 			</div>
 
@@ -48,18 +44,17 @@ const AddClass = () => {
 							className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
 							htmlFor="grid-first-name"
 						>
-							Name
+							Title
 						</label>
 
 						<input
-							// disabled={responseInfo.isLoading}
+							disabled={responseInfo.isLoading}
 							required
 							className="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
 							id="grid-first-name"
 							type="text"
-							placeholder="Jane"
-							name="name"
-							value={formData.name}
+							name="classTitle"
+							value={formData.classTitle}
 							onChange={handleOnChange}
 						/>
 					</div>
@@ -68,14 +63,14 @@ const AddClass = () => {
 					<button
 						className="shadow bg-purple-500 hover:bg-purple-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded mt-5"
 						type="submit"
-						// disabled={responseInfo.isLoading}
+						disabled={responseInfo.isLoading}
 					>
 						Add Class
 					</button>
 				</div>
 			</form>
-        </div>
-    );
+		</div>
+	);
 };
 
 export default AddClass;

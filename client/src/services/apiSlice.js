@@ -6,7 +6,7 @@ export const api = createApi({
 		baseUrl: "http://localhost:8080/",
 		credentials: "include",
 	}),
-	tagTypes: ["isLogin", "profile", "currentUser", "class"],
+	tagTypes: ["isLogin", "profile", "currentUser", "class", "topic", "course", "content"],
 	endpoints: (builder) => ({
 		// auth api start
 		register: builder.mutation({
@@ -65,6 +65,7 @@ export const api = createApi({
 				method: "POST",
 				body: formData,
 			}),
+			invalidatesTags: ["class"],
 		}),
 
 		viewCourses: builder.query({
@@ -72,6 +73,7 @@ export const api = createApi({
 				url: `api/course`,
 				method: "GET",
 			}),
+			providesTags: ["course"],
 		}),
 		addCourse: builder.mutation({
 			query: (formData) => ({
@@ -79,6 +81,7 @@ export const api = createApi({
 				method: "POST",
 				body: formData,
 			}),
+			invalidatesTags: ["course"],
 		}),
 
 		viewTopic: builder.query({
@@ -86,6 +89,7 @@ export const api = createApi({
 				url: `api/topic`,
 				method: "GET",
 			}),
+			providesTags: ["topic"],
 		}),
 		addTopic: builder.mutation({
 			query: (formData) => ({
@@ -93,6 +97,7 @@ export const api = createApi({
 				method: "POST",
 				body: formData,
 			}),
+			invalidatesTags: ["topic"],
 		}),
 
 		viewTopicContent: builder.query({
@@ -100,6 +105,7 @@ export const api = createApi({
 				url: `api/topicContent`,
 				method: "GET",
 			}),
+			providesTags: ["content"],
 		}),
 		addTopicContent: builder.mutation({
 			query: (formData) => ({
@@ -107,6 +113,7 @@ export const api = createApi({
 				method: "POST",
 				body: formData,
 			}),
+			invalidatesTags: ["content"],
 		}),
 	}),
 });
