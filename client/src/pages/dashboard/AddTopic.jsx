@@ -10,6 +10,8 @@ const AddTopic = () => {
 	const [addCategory, responseInfo] = useAddTopicMutation();
 	const courseInfo = useViewCoursesQuery();
 
+	console.log(courseInfo.data);
+
 	const handleSubmit = (e) => {
 		e.preventDefault();
 		addCategory(formData)
@@ -73,9 +75,9 @@ const AddTopic = () => {
 						>
 							<option value="">--Select course--</option>
 							{courseInfo.isSuccess &&
-								courseInfo.data?.topic?.map((topic, i) => (
-									<option key={i} value={topic._id}>
-										{topic.topicName}
+								courseInfo.data?.courses?.map((course, i) => (
+									<option key={i} value={course._id}>
+										{course.courseName}
 									</option>
 								))}
 						</select>
