@@ -24,3 +24,17 @@ exports.addCourse = expressAsyncHandler(async (req, res) => {
 		topic: newCourse,
 	});
 });
+
+exports.viewCourses = expressAsyncHandler(async (req, res) => {
+	const { classId } = req.params;
+
+	const courses = await Course.find({ class: classId });
+
+	if (courses) {
+		res.status(200).json({
+			success: true,
+			message: "get courses successfully",
+			courses,
+		});
+	}
+});

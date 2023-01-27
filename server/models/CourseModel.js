@@ -2,6 +2,11 @@ const { Schema, model } = require("mongoose");
 
 const courseSchema = new Schema(
 	{
+		class: {
+			type: Schema.Types.ObjectId,
+			ref: "Class",
+			required: true,
+		},
 		courseName: {
 			type: String,
 			trim: true,
@@ -17,7 +22,11 @@ const courseSchema = new Schema(
 			enum: ["general", "blind"],
 			default: "general",
 		},
-		courseImg: String,
+		courseImg: {
+			type: String,
+			default:
+				"https://res.cloudinary.com/hostingimagesservice/image/upload/v1674792388/eduBangla/images/fav_icon_kggp1y_fcacpk.png",
+		},
 		courseImgCloudinaryId: String,
 	},
 	{ timestamps: true }

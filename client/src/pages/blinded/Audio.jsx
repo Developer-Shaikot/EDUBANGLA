@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Audio = () => {
-  return (
-    <div>Audio</div>
-  )
-}
+	return <div>Audio</div>;
+};
 
-export default Audio
+export default Audio;

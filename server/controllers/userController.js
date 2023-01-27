@@ -29,13 +29,17 @@ exports.registerUser = expressAsyncHandler(async (req, res) => {
 exports.loginUser = expressAsyncHandler(async (req, res) => {
 	const { email, password } = req.body;
 
-	const user = await User.findOne({ email }).select("email +password");
+	const user = await User.findOne({ email }).select("email user_type +password");
 
 	if (user) {
 		const isPswMatch = await bcrypt.compare(password, user.password);
 
 		if (isPswMatch) {
-			const token = generateToken(user);
+			const token = generateToken({
+				id: user._id,
+				email: user.email,
+				user_type: user.user_type,
+			});
 
 			res.cookie("auth", token, {
 				httpOnly: true,
