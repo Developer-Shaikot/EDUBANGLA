@@ -29,7 +29,7 @@ exports.registerUser = expressAsyncHandler(async (req, res) => {
 exports.loginUser = expressAsyncHandler(async (req, res) => {
 	const { email, password } = req.body;
 
-	const user = await User.findOne({ email }).select("email user_type +password");
+	const user = await User.findOne({ email }).select("name email user_type +password");
 
 	if (user) {
 		const isPswMatch = await bcrypt.compare(password, user.password);

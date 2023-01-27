@@ -6,7 +6,7 @@ export const api = createApi({
 		baseUrl: "http://localhost:8080/",
 		credentials: "include",
 	}),
-	tagTypes: ["isLogin", "profile", "currentUser"],
+	tagTypes: ["isLogin", "profile", "currentUser", "class"],
 	endpoints: (builder) => ({
 		// auth api start
 		register: builder.mutation({
@@ -51,6 +51,21 @@ export const api = createApi({
 			}),
 			providesTags: ["currentUser"],
 		}),
+
+		getClasses: builder.query({
+			query: () => ({
+				url: "api/class/",
+				method: "GET",
+			}),
+			providesTags: ["class"],
+		}),
+		addClass: builder.mutation({
+			query: (formData) => ({
+				url: "api/class/add",
+				method: "POST",
+				body: formData,
+			}),
+		}),
 	}),
 });
 
@@ -60,4 +75,7 @@ export const {
 	useLoginMutation,
 	useIsLoggedInQuery,
 	useLogoutMutation,
+
+	useGetClassesQuery,
+	useAddClassMutation,
 } = api;
