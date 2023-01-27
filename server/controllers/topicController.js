@@ -3,6 +3,7 @@ const Topic = require("../models/TopicModel");
 const cloudinary = require("../utils/cloudinaryHandler");
 
 exports.addTopic = expressAsyncHandler(async (req, res) => {
+	console.log(req.body);
 	const newTopic = await new Topic(req.body).save();
 
 	res.status(201).json({
@@ -13,12 +14,19 @@ exports.addTopic = expressAsyncHandler(async (req, res) => {
 });
 
 exports.getTopics = expressAsyncHandler(async (req, res) => {
-	const { courseId } = req.params;
-	const topic = await Topic.find({ course: courseId });
+	const topic = await Topic.find();
 
-	res.status(201).json({
-		success: true,
-		message: "New topic added successfully",
-		topic: topic,
+	if (topic) {
+		return res.status(201).json({
+			success: true,
+			message: "New topic added successfully",
+			topic: topic,
+		});
+	}
+
+	res.status(200).json({
+		success: false,
+		message: "topic not added",
+		topic: null,
 	});
 });

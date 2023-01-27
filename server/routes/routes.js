@@ -1,10 +1,11 @@
 const homeRoute = require("./homeRoute");
 const userRoute = require("./userRoute");
 const courseRoute = require("./courseRoute");
-const topicRoute = require("./topicContentRoute");
+const topicRoute = require("./topicRoute");
 const profileRoute = require("./profileRoute");
 const classRoute = require("./classRoute");
 const audioRoute = require("./audioRoute");
+const topicContentRoute = require("./topicContentRoute");
 
 const routers = [
 	{
@@ -30,6 +31,11 @@ const routers = [
 	{
 		path: "/api/topic",
 		handler: topicRoute,
+	},
+
+	{
+		path: "/api/topicContent",
+		handler: topicContentRoute,
 	},
 	{
 		path: "/api/audio",

@@ -1,10 +1,25 @@
 import React from "react";
+import Loading from "../../components/loading/Loading";
 import Video from "../../components/video/Video";
+import { useViewTopicContentQuery } from "../../services/apiSlice";
 const ViewContent = () => {
+	const responseInfo = useViewTopicContentQuery();
+
 	return (
 		<div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
 			<div className="flex flex-wrap -mx-3 mb-2">
-				<Video src="" title="" views="" />
+				{responseInfo.isLoading ? (
+					<Loading />
+				) : (
+					responseInfo.data?.topicContents.map((content, i) => (
+						<Video
+							key={i}
+							src={content.topicVideo}
+							title={content.topicName}
+							description={content.description}
+						/>
+					))
+				)}
 			</div>
 		</div>
 	);

@@ -1,6 +1,6 @@
 const { Schema, model } = require("mongoose");
 
-const topicContentModel = new Schema(
+const topicContentSchema = new Schema(
 	{
 		topic: {
 			type: Schema.Types.ObjectId,
@@ -23,4 +23,4 @@ const topicContentModel = new Schema(
 	{ timestamps: true }
 );
 
-module.exports = model("TopicContent", topicContentModel);
+module.exports = model("TopicContent", topicContentSchema);

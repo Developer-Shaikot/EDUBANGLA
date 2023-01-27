@@ -26,15 +26,19 @@ exports.addCourse = expressAsyncHandler(async (req, res) => {
 });
 
 exports.viewCourses = expressAsyncHandler(async (req, res) => {
-	const { classId } = req.params;
-
-	const courses = await Course.find({ class: classId });
+	const courses = await Course.find();
 
 	if (courses) {
-		res.status(200).json({
+		return res.status(200).json({
 			success: true,
 			message: "get courses successfully",
 			courses,
 		});
 	}
+
+	res.status(200).json({
+		success: false,
+		message: "courses not found",
+		courses: null,
+	});
 });

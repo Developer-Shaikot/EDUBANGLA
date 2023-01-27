@@ -54,7 +54,7 @@ export const api = createApi({
 
 		getClasses: builder.query({
 			query: () => ({
-				url: "api/class/",
+				url: "api/class",
 				method: "GET",
 			}),
 			providesTags: ["class"],
@@ -62,6 +62,48 @@ export const api = createApi({
 		addClass: builder.mutation({
 			query: (formData) => ({
 				url: "api/class/add",
+				method: "POST",
+				body: formData,
+			}),
+		}),
+
+		viewCourses: builder.query({
+			query: () => ({
+				url: `api/course`,
+				method: "GET",
+			}),
+		}),
+		addCourse: builder.mutation({
+			query: (formData) => ({
+				url: `api/course/add`,
+				method: "POST",
+				body: formData,
+			}),
+		}),
+
+		viewTopic: builder.query({
+			query: () => ({
+				url: `api/topic`,
+				method: "GET",
+			}),
+		}),
+		addTopic: builder.mutation({
+			query: (formData) => ({
+				url: `api/topic/add`,
+				method: "POST",
+				body: formData,
+			}),
+		}),
+
+		viewTopicContent: builder.query({
+			query: () => ({
+				url: `api/topicContent`,
+				method: "GET",
+			}),
+		}),
+		addTopicContent: builder.mutation({
+			query: (formData) => ({
+				url: `api/topicContent/add`,
 				method: "POST",
 				body: formData,
 			}),
@@ -78,4 +120,13 @@ export const {
 
 	useGetClassesQuery,
 	useAddClassMutation,
+
+	useViewCoursesQuery,
+	useAddCourseMutation,
+
+	useAddTopicMutation,
+	useViewTopicQuery,
+
+	useAddTopicContentMutation,
+	useViewTopicContentQuery,
 } = api;

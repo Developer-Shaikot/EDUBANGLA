@@ -1,5 +1,4 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import { useGetClassesQuery } from "../../services/apiSlice";
 import ClassCourse from "./ClassCourse";
 
@@ -13,6 +12,7 @@ const Course = () => {
 					responseInfo.data?.class?.map((course, i) => (
 						<ClassCourse
 							key={i}
+							classId={course._id}
 							classTitle={course.classTitle}
 							classAvatar={course.classAvatar}
 						/>
