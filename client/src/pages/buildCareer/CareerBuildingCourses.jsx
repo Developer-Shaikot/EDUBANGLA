@@ -6,7 +6,7 @@ const CareerBuildingCourses = () => {
     return (
         <div className="m-2 md:m-10 mt-24 p-2 md:p-10 bg-white rounded-3xl">
             <div className="flex flex-wrap -mx-3 mb-6">
-                <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div className="w-full md:w-1/3 px-3 mb-6">
                     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <div className="flex flex-col items-center pb-10 mb-6">
                             <img
@@ -32,7 +32,7 @@ const CareerBuildingCourses = () => {
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div className="w-full md:w-1/3 px-3 mb-6">
                     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <div className="flex flex-col items-center pb-10">
                             <img
@@ -60,7 +60,7 @@ const CareerBuildingCourses = () => {
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div className="w-full md:w-1/3 px-3 mb-6">
                     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <div className="flex flex-col items-center pb-10">
                             <img
@@ -86,7 +86,7 @@ const CareerBuildingCourses = () => {
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div className="w-full md:w-1/3 px-3 mb-6">
                     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <div className="flex flex-col items-center pb-10">
                             <img
@@ -112,7 +112,7 @@ const CareerBuildingCourses = () => {
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div className="w-full md:w-1/3 px-3 mb-6">
                     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <div className="flex flex-col items-center pb-10">
                             <img
@@ -140,7 +140,7 @@ const CareerBuildingCourses = () => {
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div className="w-full md:w-1/3 px-3 mb-6">
                     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <div className="flex flex-col items-center pb-10">
                             <img
@@ -166,7 +166,7 @@ const CareerBuildingCourses = () => {
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div className="w-full md:w-1/3 px-3 mb-6">
                     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <div className="flex flex-col items-center pb-10">
                             <img
@@ -192,7 +192,7 @@ const CareerBuildingCourses = () => {
                     </div>
                 </div>
 
-                <div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div className="w-full md:w-1/3 px-3 mb-6">
                     <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                         <div className="flex flex-col items-center pb-10">
                             <img

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 const ClassCourse = ({ classTitle, classAvatar }) => {
     const navigate = useNavigate();
 	return (
-		<div className="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+		<div className="w-full md:w-1/3 px-3 mb-6">
 			
 			<div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
 				<div className="flex flex-col items-center pb-10">
