@@ -54,6 +54,7 @@ const AddClass = () => {
 							id="grid-first-name"
 							type="text"
 							name="classTitle"
+                            placeholder="title"
 							value={formData.classTitle}
 							onChange={handleOnChange}
 						/>

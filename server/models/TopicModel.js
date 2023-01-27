@@ -13,7 +13,7 @@ const topicSchema = new Schema({
 	topicImg: {
 		type: String,
 		default:
-			"https://res.cloudinary.com/hostingimagesservice/image/upload/v1674792388/eduBangla/images/fav_icon_kggp1y_fcacpk.png",
+			"https://res.cloudinary.com/hostingimagesservice/image/upload/v1674809872/eduBangla/images/Screenshot_1_xdl2df.png",
 	},
 	topicDescription: {
 		type: String,
