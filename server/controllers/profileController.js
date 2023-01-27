@@ -3,9 +3,9 @@ const Profile = require("../models/ProfileModel");
 const cloudinary = require("../utils/cloudinaryHandler");
 
 exports.getProfile = expressAsyncHandler(async (req, res) => {
-	const { userId } = req.params;
+	const { id } = req.user;
 
-	const profile = await Profile.findOne({ user: userId });
+	const profile = await Profile.findOne({ user: id });
 
 	if (profile) {
 		return res.status(200).json({
@@ -23,18 +23,18 @@ exports.getProfile = expressAsyncHandler(async (req, res) => {
 });
 
 exports.addProfile = expressAsyncHandler(async (req, res) => {
-	const { userId } = req.params;
+	const { id } = req.user;
 
 	let result = {};
 	if (req.file) {
-		result = cloudinary.uploader.upload(req.file.path, {
+		result = await cloudinary.uploader.upload(req.file.path, {
 			folder: "eduBangla/images",
 		});
 	}
 
 	const addProfile = await new Profile({
 		...req.body,
-		user: userId,
+		user: id,
 		profilePicture: result.secure_url,
 		profilePictureCloudinaryId: result.public_id,
 	}).save();

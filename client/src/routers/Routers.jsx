@@ -1,4 +1,3 @@
-import PageNotFound from "../pages/PageNotFound/PageNotFound";
 import AddCategories from "../pages/addCategories/AddCategories";
 import AddServices from "../pages/addServices/AddServices";
 import AvailableCoupon from "../pages/coupon/availableCoupon/AvailableCoupon";
@@ -15,6 +14,7 @@ import SalonRegistration from "../pages/admin/SalonRegistration";
 import IsLoggedIn from "./IsLoggedIn";
 import IsBP from "./IsBP";
 import IsAlreadyLoggedIn from "./IsAlreadyLoggedIn";
+import PageNotFound from "./../pages/PageNotFound/PageNotFound";
 
 const Routers = () => {
 	return (
