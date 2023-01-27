@@ -103,6 +103,21 @@ exports.getLoggedInUser = expressAsyncHandler(async (req, res) => {
 	});
 });
 
+exports.isTeacher = expressAsyncHandler(async (req, res) => {
+	const user = verifyToken(req.cookies?.auth);
+
+	if (user.user_type === "teacher") {
+		return res.status(200).json({
+			success: true,
+			message: "Current user is teacher",
+		});
+	}
+	res.status(200).json({
+		success: false,
+		message: "Current user is not teacher",
+	});
+});
+
 exports.logoutController = (req, res) => {
 	res.clearCookie("auth");
 	res.status(200).json({ success: true, message: "Logout successful" });

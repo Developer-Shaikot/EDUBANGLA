@@ -15,6 +15,7 @@ import Login from "../pages/login/Login";
 import Register from "./../pages/register/Register";
 import IsAlreadyLoggedIn from "./IsAlreadyLoggedIn";
 import Uploads from "../pages/dashboard/Uploads";
+import IsTeacher from "./IsTeacher";
 
 const Routers = () => {
 	return (
@@ -23,7 +24,9 @@ const Routers = () => {
 				path="/"
 				element={
 					<IsLoggedIn>
-						<Uploads />
+						<IsTeacher>
+							<Uploads />
+						</IsTeacher>
 					</IsLoggedIn>
 				}
 			/>

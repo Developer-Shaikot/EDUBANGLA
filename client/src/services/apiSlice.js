@@ -6,7 +6,16 @@ export const api = createApi({
 		baseUrl: "http://localhost:8080/",
 		credentials: "include",
 	}),
-	tagTypes: ["isLogin", "profile", "currentUser", "class", "topic", "course", "content"],
+	tagTypes: [
+		"isLogin",
+		"profile",
+		"currentUser",
+		"isTeacher",
+		"class",
+		"topic",
+		"course",
+		"content",
+	],
 	endpoints: (builder) => ({
 		// auth api start
 		register: builder.mutation({
@@ -28,7 +37,7 @@ export const api = createApi({
 					"Content-type": "application/json; charset=UTF-8",
 				},
 			}),
-			invalidatesTags: ["isLogin", "profile", "currentUser"],
+			invalidatesTags: ["isLogin", "profile", "currentUser", "isTeacher"],
 		}),
 		isLoggedIn: builder.query({
 			query: () => ({
@@ -36,6 +45,13 @@ export const api = createApi({
 				method: "GET",
 			}),
 			providesTags: ["isLogin"],
+		}),
+		isTeacher: builder.query({
+			query: () => ({
+				url: "api/user/isTeacher",
+				method: "GET",
+			}),
+			providesTags: ["isTeacher"],
 		}),
 		logout: builder.mutation({
 			query: () => ({
@@ -110,7 +126,7 @@ export const api = createApi({
 		addTopicContent: builder.mutation({
 			query: (formData) => {
 				const payload = new FormData();
-				
+
 				payload.append("topic", formData.topic);
 				payload.append("teacherName", formData.teacherName);
 				payload.append("topicName", formData.topicName);
@@ -134,6 +150,7 @@ export const {
 	useLoginMutation,
 	useIsLoggedInQuery,
 	useLogoutMutation,
+	useIsTeacherQuery,
 
 	useGetClassesQuery,
 	useAddClassMutation,
