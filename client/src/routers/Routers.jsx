@@ -26,14 +26,7 @@ const Routers = () => {
 					</IsLoggedIn>
 				}
 			/>
-			<Route
-				path="/register"
-				element={
-					<IsLoggedIn>
-						<Register />
-					</IsLoggedIn>
-				}
-			/>
+			<Route path="/register" element={<Register />} />
 			<Route path="/login" element={<Login />} />
 			<Route
 				path="/select-courses"

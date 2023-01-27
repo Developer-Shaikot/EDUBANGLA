@@ -1,10 +1,16 @@
-const { registerUser, loginUser } = require("../controllers/userController");
-
 const router = require("express").Router();
+const {
+	registerUser,
+	loginUser,
+	getLoggedInUser,
+	logoutController,
+	isLoggedIn,
+} = require("../controllers/userController");
 
 router.post("/register", registerUser);
 router.post("/login", loginUser);
-
-router.patch("/logout")
+router.get("/", getLoggedInUser);
+router.get("/isLoggedIn", isLoggedIn);
+router.patch("/logout", logoutController);
 
 module.exports = router;

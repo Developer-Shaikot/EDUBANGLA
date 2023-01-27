@@ -6,7 +6,7 @@ export const api = createApi({
 		baseUrl: "http://localhost:8080/",
 		credentials: "include",
 	}),
-	tagTypes: ["isLogin", "profile"],
+	tagTypes: ["isLogin", "profile", "currentUser"],
 	endpoints: (builder) => ({
 		// auth api start
 		register: builder.mutation({
@@ -28,7 +28,7 @@ export const api = createApi({
 					"Content-type": "application/json; charset=UTF-8",
 				},
 			}),
-			invalidatesTags: ["isLogin", "profile"],
+			invalidatesTags: ["isLogin", "profile", "currentUser"],
 		}),
 		isLoggedIn: builder.query({
 			query: () => ({
@@ -37,7 +37,27 @@ export const api = createApi({
 			}),
 			providesTags: ["isLogin"],
 		}),
+		logout: builder.mutation({
+			query: () => ({
+				url: "api/user/logout",
+				method: "PATCH",
+			}),
+			invalidatesTags: ["isLogin", "currentUser"],
+		}),
+		currentUser: builder.query({
+			query: () => ({
+				url: "api/user",
+				method: "GET",
+			}),
+			providesTags: ["currentUser"],
+		}),
 	}),
 });
 
-export const { useRegisterMutation, useLoginMutation, useIsLoggedInQuery } = api;
+export const {
+	useRegisterMutation,
+	useCurrentUserQuery,
+	useLoginMutation,
+	useIsLoggedInQuery,
+	useLogoutMutation,
+} = api;

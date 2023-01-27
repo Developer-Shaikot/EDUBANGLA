@@ -1,9 +1,7 @@
 import React from "react";
 import { Link, NavLink } from "react-router-dom";
-import { SiShopware } from "react-icons/si";
 import { MdOutlineCancel } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
-
 import { links } from "../data/navLinks";
 import { useStateContext } from "../contexts/ContextProvider";
 
@@ -31,12 +29,16 @@ const Sidebar = () => {
 							onClick={handleCloseSideBar}
 							className="items-center gap-3 ml-3 mt-4 flex text-xl font-extrabold tracking-tight dark:text-white text-slate-900"
 						>
-							<img style={{
-											width: "55px",
-											marginTop: "8px",
-											marginLeft: "22px",
-										}}
-										src="https://res.cloudinary.com/hostingimagesservice/image/upload/v1674792388/eduBangla/images/fav_icon_kggp1y_fcacpk.png" alt="" /> <span className="mt-3">EduBangla</span>
+							<img
+								style={{
+									width: "55px",
+									marginTop: "8px",
+									marginLeft: "22px",
+								}}
+								src="https://res.cloudinary.com/hostingimagesservice/image/upload/v1674792388/eduBangla/images/fav_icon_kggp1y_fcacpk.png"
+								alt=""
+							/>{" "}
+							<span className="mt-3">EduBangla</span>
 						</Link>
 						<TooltipComponent content="Menu" position="BottomCenter">
 							<button

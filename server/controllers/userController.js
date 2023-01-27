@@ -1,7 +1,7 @@
 const expressAsyncHandler = require("express-async-handler");
 const bcrypt = require("bcrypt");
 const User = require("../models/UserModel");
-const { generateToken } = require("../controllers/jwtController");
+const { generateToken, verifyToken } = require("../controllers/jwtController");
 
 exports.registerUser = expressAsyncHandler(async (req, res) => {
 	const { email, password } = req.body;
@@ -80,6 +80,24 @@ exports.isLoggedIn = expressAsyncHandler(async (req, res) => {
 	}
 
 	return res.status(200).json({
+		status: false,
+		user: null,
+	});
+});
+
+exports.getLoggedInUser = expressAsyncHandler(async (req, res) => {
+	const token = req.cookies.auth;
+	const user = verifyToken(token);
+
+	if (user) {
+		const userInfo = await User.findById(user.id);
+		return res.status(200).json({
+			status: true,
+			user: userInfo,
+		});
+	}
+
+	res.status(200).json({
 		status: false,
 		user: null,
 	});

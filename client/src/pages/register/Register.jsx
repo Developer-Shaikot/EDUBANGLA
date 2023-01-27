@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useRegisterMutation } from "../../services/apiSlice";
 
@@ -129,9 +129,9 @@ export default function Register() {
 								}
 							/>
 						</div>
-						<a href="#" className="text-xs text-purple-500 hover:underline">
-							Forget Password?
-						</a>
+						<Link to="/login" className="text-xs text-purple-500 hover:underline">
+							Already have an account? Login now.
+						</Link>
 						<div className="mt-6">
 							<button
 								disabled={registerResponseInfo.isLoading}

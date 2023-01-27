@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useLoginMutation } from "../../services/apiSlice";
 
@@ -11,8 +11,6 @@ export default function Login() {
 	const [formData, setFormData] = useState(initialData);
 	const [login, loginResponseInfo] = useLoginMutation();
 	const [loginError, setLoginError] = useState(false);
-
-
 
 	const handleError = () => {
 		toast.error("Login failed");
@@ -28,7 +26,7 @@ export default function Login() {
 				if (data.success) {
 					toast.success("Login successful");
 					setLoginError(false);
-					navigate("/", { replace: true });
+					navigate("/audio-courses", { replace: true });
 					setFormData(initialData);
 				} else {
 					handleError();
@@ -91,9 +89,9 @@ export default function Login() {
 								}
 							/>
 						</div>
-						<a href="#" className="text-xs text-purple-500 hover:underline">
-							Forget Password?
-						</a>
+						<Link to="/register" className="text-xs text-purple-500 hover:underline">
+							Don't have an account? Register Now
+						</Link>
 						<div className="mt-6">
 							<button
 								disabled={loginResponseInfo.isLoading}

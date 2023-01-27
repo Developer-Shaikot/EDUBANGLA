@@ -9,6 +9,7 @@ import "./App.css";
 
 import { useStateContext } from "./contexts/ContextProvider";
 import Routers from "./routers/Routers";
+import { useIsLoggedInQuery } from "./services/apiSlice";
 
 const App = () => {
 	const {
@@ -30,6 +31,8 @@ const App = () => {
 		}
 	}, []);
 
+	const isLoggedInfo = useIsLoggedInQuery();
+
 	return (
 		<div className={currentMode === "Dark" ? "dark" : ""}>
 			<BrowserRouter>
@@ -46,19 +49,24 @@ const App = () => {
 							</button>
 						</TooltipComponent>
 					</div>
-					{activeMenu ? (
-						<div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
-							<Sidebar />
-						</div>
-					) : (
-						<div className="w-0 dark:bg-secondary-dark-bg">
-							<Sidebar />
-						</div>
+					{isLoggedInfo.isSuccess && isLoggedInfo.data?.status && (
+						<>
+							{activeMenu ? (
+								<div className="w-72 fixed sidebar dark:bg-secondary-dark-bg bg-white ">
+									<Sidebar />
+								</div>
+							) : (
+								<div className="w-0 dark:bg-secondary-dark-bg">
+									<Sidebar />
+								</div>
+							)}
+						</>
 					)}
 					<div
 						className={
 							activeMenu
-								? "dark:bg-main-dark-bg  bg-main-bg min-h-screen md:ml-72 w-full  "
+								? "dark:bg-main-dark-bg  bg-main-bg min-h-screen w-full " +
+								  (isLoggedInfo?.data?.status && "md:ml-72")
 								: "bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 "
 						}
 					>
