@@ -10,6 +10,7 @@ import "./App.css";
 import { useStateContext } from "./contexts/ContextProvider";
 import Routers from "./routers/Routers";
 import { useIsLoggedInQuery } from "./services/apiSlice";
+import ChatContainer from "./components/chat/ChatContainer";
 
 const App = () => {
 	const {
@@ -74,6 +75,7 @@ const App = () => {
 							<Navbar />
 						</div>
 						<div>
+							<ChatContainer />
 							{themeSettings && <ThemeSettings />}
 
 							{/* all routes */}
