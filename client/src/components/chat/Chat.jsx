@@ -4,7 +4,7 @@ import { format } from "date-fns";
 const userImage =
 	"https://res.cloudinary.com/hostingimagesservice/image/upload/v1688444244/eduBangla/images/favpng_stock-photography-user_qudy2p.png";
 const ediImage =
-	"https://res.cloudinary.com/hostingimagesservice/image/upload/v1688380355/eduBangla/images/robot-chatbot-icon-sign-free-vector-removebg-preview_apm8sm.png";
+  "https://res.cloudinary.com/hostingimagesservice/image/upload/v1688482763/7d9b1d662b28cd365b33a01a3d0288e1_b03ys0.gif";
 
 const Chat = ({ index, time = new Date.now(), text }) => {
 	const isEdisChat = index % 2 === 0;
@@ -14,7 +14,7 @@ const Chat = ({ index, time = new Date.now(), text }) => {
 			<img
 				src={isEdisChat ? ediImage : userImage}
 				alt="user"
-				className={`h-14 w-10 mt-2 ${isEdisChat ? "order-1" : "order-2"}`}
+				className={`h-12 w-22 mt-2 ${isEdisChat ? "order-1" : "order-2"}`}
 			/>
 			<div className={isEdisChat ? "order-2" : "order-1"}>
 				<div className={`mb-1 flex gap-1 items-center ${!isEdisChat && "justify-end"}`}>
