@@ -17,6 +17,7 @@ const PORT = process.env.PORT || 5000;
 connectDB()
 	.then(() => {
 		app.listen(PORT, () => {
+			require("./config/openAi");
 			console.info(`Server running at port:${PORT}`);
 		});
 	})

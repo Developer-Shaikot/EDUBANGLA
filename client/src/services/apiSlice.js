@@ -142,22 +142,24 @@ export const api = createApi({
 			},
 			invalidatesTags: ["content"],
 		}),
+
 		// chat slices
+		getChats: builder.query({
+			query: () => {
+				return {
+					url: `api/chat/all`,
+					method: "GET",
+				};
+			},
+			providesTags: ["chat"],
+		}),
+
 		addChat: builder.mutation({
 			query: (body) => {
 				return {
 					url: `api/chat/add`,
 					method: "POST",
 					body,
-				};
-			},
-			invalidatesTags: ["chat"],
-		}),
-		getChats: builder.query({
-			query: () => {
-				return {
-					url: `api/chat/all`,
-					method: "GET",
 				};
 			},
 			invalidatesTags: ["chat"],
@@ -184,4 +186,7 @@ export const {
 
 	useAddTopicContentMutation,
 	useViewTopicContentQuery,
+
+	useAddChatMutation,
+	useGetChatsQuery,
 } = api;

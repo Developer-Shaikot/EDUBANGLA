@@ -1,10 +1,20 @@
 const expressAsyncHandler = require("express-async-handler");
 const Chat = require("../models/ChatModel");
+const { runCompletion } = require("../utils/openAiHandler");
 
 exports.getChatController = expressAsyncHandler(async (req, res) => {
 	const { userId } = req.cookies;
 
 	if (!userId) return res.status(500).json({ message: "User id not found" });
+
+	const isExist = await Chat.findOne({ userId });
+
+	if (!isExist) {
+		await new Chat({
+			userId,
+			transcript: [{ text: "What can I help you with today?", time: Date.now() }],
+		}).save();
+	}
 
 	const chats = await Chat.findOne({ userId });
 
@@ -16,27 +26,26 @@ exports.getChatController = expressAsyncHandler(async (req, res) => {
 	}
 
 	res.status(404).json({
-        userId,
+		userId,
 		message: "Chats not found",
 	});
 });
 
 exports.addChatController = expressAsyncHandler(async (req, res) => {
 	const { userId } = req.cookies;
+	const { text } = req.body;
 
 	if (!userId) return res.status(500).json({ message: "User id not found!" });
+	const result = await runCompletion(text);
 
-	const isExist = await Chat.findOne({ userId });
-
-	if (!isExist) {
-		await new Chat({ userId }).save();
-	}
-
-	const newTranscript = { text: req.body.text, time: Date.now() };
+	const newTranscripts = [
+		{ text, time: Date.now() },
+		{ text: result, time: Date.now() },
+	];
 
 	const newChat = await Chat.findOneAndUpdate(
 		{ userId },
-		{ $push: { transcript: newTranscript } },
+		{ $push: { transcript: { $each: newTranscripts } } },
 		{ upsert: true, new: true }
 	);
 

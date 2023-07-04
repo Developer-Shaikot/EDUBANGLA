@@ -6,7 +6,7 @@ const userImage =
 const ediImage =
 	"https://res.cloudinary.com/hostingimagesservice/image/upload/v1688380355/eduBangla/images/robot-chatbot-icon-sign-free-vector-removebg-preview_apm8sm.png";
 
-const Chat = ({ index, text = "What can I help you with today?" }) => {
+const Chat = ({ index, time = new Date.now(), text }) => {
 	const isEdisChat = index % 2 === 0;
 
 	return (
@@ -25,7 +25,7 @@ const Chat = ({ index, text = "What can I help you with today?" }) => {
 						className={`text-[12px] text-gray-700 mt-[1px] ${
 							isEdisChat ? "order-2" : "order-1"
 						}`}
-					>{`${format(new Date(), "p")}`}</span>
+					>{`${format(new Date(time), "p")}`}</span>
 				</div>
 				<div
 					className={`inline-block ${
