@@ -15,6 +15,7 @@ export const api = createApi({
 		"topic",
 		"course",
 		"content",
+		"chat",
 	],
 	endpoints: (builder) => ({
 		// auth api start
@@ -140,6 +141,26 @@ export const api = createApi({
 				};
 			},
 			invalidatesTags: ["content"],
+		}),
+		// chat slices
+		addChat: builder.mutation({
+			query: (body) => {
+				return {
+					url: `api/chat/add`,
+					method: "POST",
+					body,
+				};
+			},
+			invalidatesTags: ["chat"],
+		}),
+		getChats: builder.query({
+			query: () => {
+				return {
+					url: `api/chat/all`,
+					method: "GET",
+				};
+			},
+			invalidatesTags: ["chat"],
 		}),
 	}),
 });

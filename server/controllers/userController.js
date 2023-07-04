@@ -41,6 +41,8 @@ exports.loginUser = expressAsyncHandler(async (req, res) => {
 				user_type: user.user_type,
 			});
 
+			res.cookie("userId", user._id);
+
 			res.cookie("auth", token, {
 				httpOnly: true,
 			});

@@ -10,9 +10,13 @@ const ChatContainer = () => {
         setOpen(!open)
     }
 
+    const closeChat = () => {
+        setOpen(false)
+    }
+
 	return (
-		<div>
-			{open && <ChatBox />}
+		<div className="z-60 relative">
+			{open && <ChatBox closeChat={closeChat} />}
 			<ChatButton open={open} toggleChat={toggleChat} />
 		</div>
 	);

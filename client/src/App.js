@@ -30,7 +30,7 @@ const App = () => {
 			setCurrentColor(currentThemeColor);
 			setCurrentMode(currentThemeMode);
 		}
-	}, []);
+	}, [setCurrentColor, setCurrentMode]);
 
 	const isLoggedInfo = useIsLoggedInQuery();
 
@@ -75,7 +75,10 @@ const App = () => {
 							<Navbar />
 						</div>
 						<div>
-							<ChatContainer />
+							{isLoggedInfo.isSuccess && isLoggedInfo.data?.status && (
+								<ChatContainer />
+							)}
+
 							{themeSettings && <ThemeSettings />}
 
 							{/* all routes */}

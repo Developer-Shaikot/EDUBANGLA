@@ -5,6 +5,7 @@ const topicRoute = require("./topicRoute");
 const profileRoute = require("./profileRoute");
 const classRoute = require("./classRoute");
 const audioRoute = require("./audioRoute");
+const chatRoute = require("./chatRoute");
 const topicContentRoute = require("./topicContentRoute");
 
 const routers = [
@@ -13,38 +14,42 @@ const routers = [
 		handler: homeRoute,
 	},
 	{
-		path: "/api/user",
+		path: "/user",
 		handler: userRoute,
 	},
 	{
-		path: "/api/profile",
+		path: "/profile",
 		handler: profileRoute,
 	},
 	{
-		path: "/api/class",
+		path: "/class",
 		handler: classRoute,
 	},
 	{
-		path: "/api/course",
+		path: "/course",
 		handler: courseRoute,
 	},
 	{
-		path: "/api/topic",
+		path: "/topic",
 		handler: topicRoute,
 	},
 
 	{
-		path: "/api/topicContent",
+		path: "/topicContent",
 		handler: topicContentRoute,
 	},
 	{
-		path: "/api/audio",
+		path: "/audio",
 		handler: audioRoute,
+	},
+	{
+		path: "/chat",
+		handler: chatRoute,
 	},
 ];
 
 module.exports = (app) => {
 	routers.forEach((router) => {
-		app.use(router.path, router.handler);
+		app.use("/api" + router.path, router.handler);
 	});
 };
