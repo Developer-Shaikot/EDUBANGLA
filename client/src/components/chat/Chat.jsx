@@ -29,7 +29,7 @@ const Chat = ({ index, time = new Date.now(), text }) => {
 				</div>
 				<div
 					className={`inline-block ${
-						isEdisChat ? "bg-[#f0f4f9]" : "bg-[#0084ff] text-white"
+						isEdisChat ? "bg-[#f0f4f9]" : "bg-[#0084ff] text-white float-right"
 					} p-2 rounded-md text-sm`}
 				>
 					{text}
