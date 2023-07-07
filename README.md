@@ -1,4 +1,6 @@
 "# Runtime_Terror"
+<img src="https://res.cloudinary.com/hostingimagesservice/image/upload/v1688752007/Edu_Bangla_Homepage_kvucst.jpg" /> <br/>
+
 
 To run this project you can do simply clone the git first and then push a command in terminal to "npm install" after completing npm install, you just need to write npm start on terminal and hit enter for both client and server to show our live project.
 
