@@ -1,10 +1,6 @@
 import React from "react";
 import { format } from "date-fns";
-
-const userImage =
-	"https://res.cloudinary.com/hostingimagesservice/image/upload/v1688444244/eduBangla/images/favpng_stock-photography-user_qudy2p.png";
-const ediImage =
-  "https://res.cloudinary.com/hostingimagesservice/image/upload/v1688482763/7d9b1d662b28cd365b33a01a3d0288e1_b03ys0.gif";
+import { ediImage, userImage } from "../../constants/images";
 
 const Chat = ({ index, time = new Date.now(), text }) => {
 	const isEdisChat = index % 2 === 0;
@@ -29,7 +25,7 @@ const Chat = ({ index, time = new Date.now(), text }) => {
 				</div>
 				<div
 					className={`inline-block ${
-						isEdisChat ? "bg-[#f0f4f9]" : "bg-[#0084ff] text-white"
+						isEdisChat ? "bg-[#f0f4f9]" : "bg-[#0084ff] text-white float-right"
 					} p-2 rounded-md text-sm`}
 				>
 					{text}
