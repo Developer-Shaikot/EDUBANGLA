@@ -16,104 +16,113 @@ import Register from "./../pages/register/Register";
 import IsAlreadyLoggedIn from "./IsAlreadyLoggedIn";
 import Uploads from "../pages/dashboard/Uploads";
 import IsTeacher from "./IsTeacher";
+import Home from "../components/Home/Home";
 
 const Routers = () => {
-	return (
-		<Routes>
-			<Route
-				path="/"
-				element={
-					<IsLoggedIn>
-						<IsTeacher>
-							<Uploads />
-						</IsTeacher>
-					</IsLoggedIn>
-				}
-			/>
-			<Route
-				path="/register"
-				element={
-					<IsAlreadyLoggedIn>
-						<Register />
-					</IsAlreadyLoggedIn>
-				}
-			/>
-			<Route
-				path="/login"
-				element={
-					<IsAlreadyLoggedIn>
-						<Login />
-					</IsAlreadyLoggedIn>
-				}
-			/>
-			<Route
-				path="/select-courses"
-				element={
-					<IsLoggedIn>
-						<Course />
-					</IsLoggedIn>
-				}
-			/>
-			<Route
-				path="/view-course"
-				element={
-					<IsLoggedIn>
-						<ViewCourse />
-					</IsLoggedIn>
-				}
-			/>
-			<Route
-				path="/view-topic"
-				element={
-					<IsLoggedIn>
-						<ViewTopic />
-					</IsLoggedIn>
-				}
-			/>
-			<Route
-				path="/topic-content"
-				element={
-					<IsLoggedIn>
-						<ViewContent />
-					</IsLoggedIn>
-				}
-			/>
-			<Route
-				path="/audio-courses"
-				element={
-					<IsLoggedIn>
-						<Audio />
-					</IsLoggedIn>
-				}
-			/>
-			<Route
-				path="/career-building-courses"
-				element={
-					<IsLoggedIn>
-						<CareerBuildingCourses />
-					</IsLoggedIn>
-				}
-			/>
-			<Route
-				path="/talk-to-expert"
-				element={
-					<IsLoggedIn>
-						<TalkToExperts />
-					</IsLoggedIn>
-				}
-			/>
-			<Route
-				path="/share-your-opinion"
-				element={
-					<IsLoggedIn>
-						<ShareYourOpinion />
-					</IsLoggedIn>
-				}
-			/>
-			<Route path="/contact" element={<Contact />} />
-			<Route path="*" element={<PageNotFound />} />
-		</Routes>
-	);
+  return (
+    <Routes>
+      <Route
+        path="/"
+        element={
+          <IsLoggedIn>
+            <IsTeacher>
+              <Uploads />
+            </IsTeacher>
+          </IsLoggedIn>
+        }
+      />
+      <Route
+        path="/register"
+        element={
+          <IsAlreadyLoggedIn>
+            <Register />
+          </IsAlreadyLoggedIn>
+        }
+      />
+      <Route
+        path="/login"
+        element={
+          <IsAlreadyLoggedIn>
+            <Login />
+          </IsAlreadyLoggedIn>
+        }
+      />
+      <Route
+        path="/home"
+        element={
+          <IsLoggedIn>
+            <Home />
+          </IsLoggedIn>
+        }
+      />
+      <Route
+        path="/select-courses"
+        element={
+          <IsLoggedIn>
+            <Course />
+          </IsLoggedIn>
+        }
+      />
+      <Route
+        path="/view-course"
+        element={
+          <IsLoggedIn>
+            <ViewCourse />
+          </IsLoggedIn>
+        }
+      />
+      <Route
+        path="/view-topic"
+        element={
+          <IsLoggedIn>
+            <ViewTopic />
+          </IsLoggedIn>
+        }
+      />
+      <Route
+        path="/topic-content"
+        element={
+          <IsLoggedIn>
+            <ViewContent />
+          </IsLoggedIn>
+        }
+      />
+      <Route
+        path="/audio-courses"
+        element={
+          <IsLoggedIn>
+            <Audio />
+          </IsLoggedIn>
+        }
+      />
+      <Route
+        path="/career-building-courses"
+        element={
+          <IsLoggedIn>
+            <CareerBuildingCourses />
+          </IsLoggedIn>
+        }
+      />
+      <Route
+        path="/talk-to-expert"
+        element={
+          <IsLoggedIn>
+            <TalkToExperts />
+          </IsLoggedIn>
+        }
+      />
+      <Route
+        path="/share-your-opinion"
+        element={
+          <IsLoggedIn>
+            <ShareYourOpinion />
+          </IsLoggedIn>
+        }
+      />
+      <Route path="/contact" element={<Contact />} />
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
+  );
 };
 
 export default Routers;
