@@ -1,10 +1,13 @@
-"# Runtime_Terror"
+"#Team Runtime_Terror"
 
-To run this project you can do simply clone the git first and then push a command in terminal to "npm install" after completing npm install, you just need to write npm start on terminal and hit enter for both client and server to show our live project.
+<h2>EduBagla Home page designed with Figma. </h2> <br/>
+<img src="https://res.cloudinary.com/hostingimagesservice/image/upload/v1688752007/Edu_Bangla_Homepage_kvucst.jpg" /> <br/>
 
-Technology we have used: MongoDB, Express.JS, React.JS, Node.JS -->MERN.
+To run this project, you can simply clone git first and then push a command in the terminal to "npm install." After completing the npm install, you just need to write npm start on the terminal and hit enter for both client and server to show our live project.
 
-Other Framework/Library we have used: Tailwind.CSS & Syncfusion.
+Technology we have used: MongoDB, Express.JS, React.JS, Node.JS (MERN).
+
+Other frameworks/Libraries we have used: Tailwind.CSS & Syncfusion.
 
 package we installed for backend: bcrypt, cloudinary, cors, dotenv, express-async-handler, jsonwebtoken, mongoose, multer.
 
