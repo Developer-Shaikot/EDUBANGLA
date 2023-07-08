@@ -10,9 +10,23 @@ import chooseCourses from "./../../assets/images/chooseCourses.svg";
 import learnEdu from "./../../assets/images/educative.gif";
 import { useStateContext } from "../../contexts/ContextProvider";
 import "./Home.css";
+import { useGetClassesQuery } from "../../services/apiSlice";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
 	const { activeMenu } = useStateContext();
+	const classesInfo = useGetClassesQuery();
+
+	const navigate = useNavigate();
+
+	const [classes, setClasses] = useState([]);
+
+	useEffect(() => {
+		if (classesInfo.isSuccess) {
+			setClasses(classesInfo.data?.class?.slice(0, 3));
+		}
+	}, [classesInfo]);
 
 	return (
 		<div
@@ -33,7 +47,7 @@ const Home = () => {
 					top: "3159px",
 					left: "0px",
 					borderRadius: "0px 0px 200px 0px",
-					width: "1441px",
+					width: "100%",
 					height: "1031px",
 					objectFit: "cover",
 				}}
@@ -381,139 +395,42 @@ const Home = () => {
 				Choose Your Courses
 			</b>
 			{/* --------------------- dynamic ---------------------- */}
-			<div
-				style={{
-					position: "absolute",
-					top: "3441px",
-					left: activeMenu ? "70px" : "77px",
-					borderRadius: "20px",
-					backgroundColor: "#fff",
-					boxShadow: "0px 4px 30px rgba(193, 128, 255, 0.32)",
-					width: activeMenu ? "275px" : "363px",
-					height: "590px",
-				}}
-			/>
-			<div
-				style={{
-					position: "absolute",
-					top: "3390px",
-					left: "50%",
-					translate: "-50%",
-					borderRadius: "20px",
-					backgroundColor: "#fff",
-					boxShadow: "0px 4px 30px rgba(193, 128, 255, 0.32)",
-					width: activeMenu ? "275px" : "363px",
-					height: "590px",
-				}}
-			/>
-			<div
-				style={{
-					position: "absolute",
-					top: "3441px",
-					left: activeMenu ? "unset" : "941px",
-					right: activeMenu ? "5%" : "unset",
-					borderRadius: "20px",
-					backgroundColor: "#fff",
-					boxShadow: "0px 4px 30px rgba(193, 128, 255, 0.32)",
-					width: activeMenu ? "275px" : "363px",
-					height: "590px",
-				}}
-			/>
-			<img
-				style={{
-					position: "absolute",
-					top: "3453px",
-					left: "82px",
-					borderRadius: "20px 20px 0px 0px",
-					width: activeMenu ? "250px" : "352px",
-					height: activeMenu ? "197px" : "244px",
-					objectFit: "cover",
-				}}
-				alt=""
-				src="/rectangle-81@2x.png"
-			/>
-			<img
-				style={{
-					position: "absolute",
-					top: "3415px",
-					left: "50%",
-					translate: "-50%",
-					borderRadius: "20px 20px 0px 0px",
-					width: activeMenu ? "250px" : "352px",
-					height: activeMenu ? "197px" : "244px",
-					objectFit: "cover",
-				}}
-				alt=""
-				src="/rectangle-98@2x.png"
-			/>
-			<img
-				style={{
-					position: "absolute",
-					top: "3453px",
-					left: activeMenu ? "757px" : "941px",
-					borderRadius: "20px 20px 0px 0px",
-					width: activeMenu ? "250px" : "352px",
-					height: activeMenu ? "197px" : "244px",
-					objectFit: "cover",
-				}}
-				alt=""
-				src="/rectangle-83@2x.png"
-			/>
-			<div
-				style={{
-					position: "absolute",
-					top: activeMenu ? "3700px" : "3767px",
-					left: activeMenu ? "8%" : "106px",
-					fontSize: "18px",
-					fontWeight: "300",
-					display: "inline-block",
-					width: activeMenu ? "235px" : "290px",
-					height: "161px",
-				}}
-			>
-				0. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-				Ipsum has been the industry's standard dummy text ever since the 1500s,
+			<div className="absolute top-[3441px] px-5 flex gap-10 items-center justify-center w-full">
+				{classes.map((classItem) => (
+					<div
+						key={classItem._id}
+						style={{
+							borderRadius: "20px",
+							backgroundColor: "#fff",
+							boxShadow: "0px 4px 30px rgba(193, 128, 255, 0.32)",
+							flexBasis: "33%",
+							height: "550px",
+						}}
+					>
+						<img
+							style={{
+								borderRadius: "20px 20px 0px 0px",
+								width: "100%",
+								height: activeMenu ? "197px" : "244px",
+								objectFit: "cover",
+								zIndex: "999",
+								marginBottom: "8px",
+							}}
+							alt="hello-world"
+							src={classItem.classAvatar}
+						/>
+						<b className="pb-5 px-5 text-[25px] font-thin">{classItem.classTitle}</b>
+						<div
+							onClick={() => navigate("/view-course")}
+							className="text-[19px] mt-3 px-5 cursor-pointer hover:text-[#313131c6] transition-all"
+						>
+							{classItem.classDescription}
+						</div>
+					</div>
+				))}
 			</div>
-			<div
-				style={{
-					position: "absolute",
-					top: activeMenu ? "3660px" : "3715px",
-					left: activeMenu ? "420px" : "530px",
-					fontSize: "18px",
-					fontWeight: "300",
-					display: "inline-block",
-					width: activeMenu ? "235px" : "290px",
-					height: "161px",
-				}}
-			>
-				5. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-				Ipsum has been the industry's standard dummy text ever since the 1500s,
-			</div>
-			<div
-				style={{
-					position: "absolute",
-					top: activeMenu ? "3700px" : "3767px",
-					left: activeMenu ? "767px" : "977px",
-					fontSize: "18px",
-					fontWeight: "300",
-					display: "inline-block",
-					width: activeMenu ? "235px" : "290px",
-					height: "161px",
-				}}
-			>
-				1. Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-				Ipsum has been the industry's standard dummy text ever since the 1500s,
-			</div>
-			<b
-				style={{
-					position: "absolute",
-					top: activeMenu ? "3660px" : "3718px",
-					left: activeMenu ? "8%" : "105px",
-					fontSize: activeMenu ? "20px" : "28px",
-				}}
-			>
-				Digital Marketing
-			</b>
+
+			{/*
 			<b
 				style={{
 					position: "absolute",
@@ -533,7 +450,8 @@ const Home = () => {
 				}}
 			>
 				Graphic Design
-			</b>
+			</b> */}
+			{/* ......--------------------------------------------- */}
 			<img
 				style={{
 					position: "absolute",
@@ -673,7 +591,7 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "5278px",
-					left: `calc(50% - ${activeMenu ? "457px" : "517px"})`,
+					left: activeMenu ? "45px" : "100px",
 					fontSize: activeMenu ? "31px" : "40px",
 					display: "inline-block",
 					fontFamily: "Montserrat",
@@ -790,7 +708,8 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "5268px",
-					left: activeMenu ? "615px" : "874px",
+					// left: activeMenu ? "615px" : "874px",
+					right: activeMenu ? "42px" : "80px",
 					fontSize: "40px",
 					fontFamily: "Montserrat",
 					color: "#fff",
@@ -834,39 +753,6 @@ const Home = () => {
 				alt=""
 				src={BookAvatar}
 			/>
-			<img
-				style={{
-					position: "absolute",
-					top: "3972.65px",
-					left: "463.65px",
-					width: "9.86px",
-					height: "11.71px",
-				}}
-				alt=""
-				src="/group-115.svg"
-			/>
-			<img
-				style={{
-					position: "absolute",
-					top: "3917.65px",
-					left: "866.65px",
-					width: "9.86px",
-					height: "11.71px",
-				}}
-				alt=""
-				src="/group-116.svg"
-			/>
-			<img
-				style={{
-					position: "absolute",
-					top: "3975.65px",
-					left: "1266.65px",
-					width: "9.86px",
-					height: "11.71px",
-				}}
-				alt=""
-				src="/group-115.svg"
-			/>
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20666.06650648045!2d90.36840800216177!3d23.701730868383905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1688745012977!5m2!1sen!2sbd"
 				width="600"
@@ -878,7 +764,8 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "5360px",
-					left: activeMenu ? "500px" : "740px",
+					left: activeMenu ? "unset" : "740px",
+					right: activeMenu ? "40px" : "unset",
 					width: "534px",
 					height: "534px",
 					objectFit: "cover",
@@ -968,15 +855,14 @@ const Home = () => {
 						"linear-gradient(210.85deg, rgba(143, 51, 231, 0.85), rgba(213, 76, 236, 0.85) 98.72%, rgba(101, 16, 241, 0.39) 99.62%, rgba(147, 48, 241, 0.85))",
 					boxShadow: "0px 4px 30px 2px rgba(193, 128, 255, 0.42)",
 					width: "32.5%",
-					height: "9%",
+					height: "9.8%",
 				}}
 			/>
 			<b
 				style={{
 					position: "absolute",
 					top: "2406px",
-					left: activeMenu ? "unset" : "830px",
-					right: activeMenu ? "5%" : "unset",
+					right: activeMenu ? "5%" : "8%",
 					fontSize: activeMenu ? "20px" : "28px",
 					display: "inline-block",
 					color: "#fff",
@@ -992,8 +878,7 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "2593px",
-					left: activeMenu ? "unset" : "944px",
-					right: activeMenu ? "2%" : "unset",
+					right: activeMenu ? "6.5%" : "10%",
 					letterSpacing: "0.06em",
 					fontWeight: "500",
 					color: "#fff",
@@ -1003,38 +888,39 @@ const Home = () => {
 				}}
 			>
 				Your Full Name
+				<input type="text" className="modern-input mb-3" />
 			</div>
 			<div
 				style={{
 					position: "absolute",
 					top: "2709px",
-					left: activeMenu ? "unset" : "944px",
-					right: activeMenu ? "2%" : "unset",
+					right: activeMenu ? "6.5%" : "10%",
 					letterSpacing: "0.06em",
 					fontWeight: "500",
 					color: "#fff",
 					display: "inline-block",
-					width: "313px",
+					width: "285px",
 					height: "40px",
 				}}
 			>
 				Your Email Address
+				<input type="email" className="modern-input mb-3" />
 			</div>
 			<div
 				style={{
 					position: "absolute",
 					top: "2825px",
-					left: activeMenu ? "unset" : "944px",
-					right: activeMenu ? "2%" : "unset",
+					right: activeMenu ? "6.5%" : "10%",
 					letterSpacing: "0.06em",
 					fontWeight: "500",
 					color: "#fff",
 					display: "inline-block",
-					width: "307px",
+					width: "285px",
 					height: "40px",
 				}}
 			>
 				Your Phone Number
+				<input type="tel" className="modern-input" />
 			</div>
 			<img
 				style={{
@@ -1088,7 +974,7 @@ const Home = () => {
 						padding: "0",
 						backgroundColor: "transparent",
 						position: "absolute",
-						top: "-137%",
+						top: "-26%",
 						left: "-60%",
 						boxSizing: "border-box",
 						width: "125px",

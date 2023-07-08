@@ -1,7 +1,7 @@
 import { AiOutlineCloudUpload } from "react-icons/ai";
 import { GoFileSubmodule } from "react-icons/go";
 import { FaFileAudio } from "react-icons/fa";
-import { MdOutlineContacts, MdOutlinePostAdd, MdWorkOutline } from "react-icons/md";
+import { MdOutlineContacts, MdOutlinePostAdd, MdWorkOutline, MdHome } from "react-icons/md";
 import { GiTalk } from "react-icons/gi";
 
 export const links = [
@@ -19,6 +19,11 @@ export const links = [
 	{
 		title: "General",
 		links: [
+			{
+				name: "Home",
+				route: "",
+				icon: <MdHome />,
+			},
 			{
 				name: "Select Classes",
 				route: "select-courses",

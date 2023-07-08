@@ -31,7 +31,7 @@ const TalkToExperts = () => {
 						className="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch"
 					>
 						{chatInfo.data?.chats?.transcript.map((data, i) => (
-							<SingleChat text={data.text} index={i} />
+							<SingleChat key={data._id} text={data.text} index={i} />
 						))}
 						{addChatInfo.isLoading && (
 							<SingleChat
@@ -98,9 +98,9 @@ function Microphone() {
 					className="h-6 w-6 text-gray-600"
 				>
 					<path
-						stroke-linecap="round"
-						stroke-linejoin="round"
-						stroke-width="2"
+						strokeLinecap="round"
+						strokeLinejoin="round"
+						strokeWidth="2"
 						d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"
 					></path>
 				</svg>
