@@ -7,25 +7,43 @@ import vector from "./../../assets/images/Group 119.svg";
 import bestEdu from "./../../assets/images/bestEdu.svg";
 import timerPart from "./../../assets/images/timerPart.svg";
 import learnEdu from "./../../assets/images/educative.gif";
+import careerBuildingImg from "./../../assets/images/career-building.png";
+import classesImg from "./../../assets/images/classes.png";
+import coursesImg from "./../../assets/images/courses.png";
 import { useStateContext } from "../../contexts/ContextProvider";
 import "./Home.css";
-import { useGetClassesQuery } from "../../services/apiSlice";
-import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+
+const contents = [
+	{
+		id: "1",
+		heading: "All Classes",
+		description:
+			"The Classes typically refer to educational or instructional sessions that are pre-recorded and made available for users to access at their convenience. These classes can cover a wide range of subjects, such as academic courses.",
+		image: classesImg,
+		path: "select-courses",
+	},
+	{
+		id: "2",
+		heading: "Audio Courses",
+		description:
+			"The Audio courses are structured educational programs that are designed to provide comprehensive instruction on a particular subject to the specific categories of students. This is often more in-depth and extensive compared to individual classes.",
+		image: coursesImg,
+		path: "audio-courses",
+	},
+	{
+		id: "3",
+		heading: "Career Building",
+		description:
+			"Career-building courses is an educational program or series of classes specifically designed to help individuals develop the skills, knowledge, and competencies necessary for advancing their careers.",
+		image: careerBuildingImg,
+		path: "career-building-courses",
+	},
+];
 
 const Home = () => {
 	const { activeMenu } = useStateContext();
-	const classesInfo = useGetClassesQuery();
-
 	const navigate = useNavigate();
-
-	const [classes, setClasses] = useState([]);
-
-	useEffect(() => {
-		if (classesInfo.isSuccess) {
-			setClasses(classesInfo.data?.class?.slice(0, 3));
-		}
-	}, [classesInfo]);
 
 	return (
 		<div
@@ -38,7 +56,9 @@ const Home = () => {
 				fontSize: "20px",
 				color: "#000",
 				fontFamily: "Poppins",
+				marginTop: "2px",
 			}}
+			className="shadow-md"
 		>
 				<img
 					style={{
@@ -380,15 +400,15 @@ const Home = () => {
 			</b>
 			{/* --------------------- dynamic ---------------------- */}
 			<div className="absolute top-[3441px] px-5 flex gap-10 items-center justify-center w-full">
-				{classes.map((classItem) => (
+				{contents.map((item) => (
 					<div
-						key={classItem._id}
+						key={item.id}
 						style={{
 							borderRadius: "20px",
 							backgroundColor: "#fff",
 							boxShadow: "0px 4px 30px rgba(193, 128, 255, 0.32)",
 							flexBasis: "33%",
-							height: "550px",
+							height: "580px",
 						}}
 					>
 						<img
@@ -398,44 +418,22 @@ const Home = () => {
 								height: activeMenu ? "197px" : "244px",
 								objectFit: "cover",
 								zIndex: "999",
-								marginBottom: "8px",
+								marginBottom: "12px",
+								marginTop: "10px"
 							}}
 							alt="hello-world"
-							src={classItem.classAvatar}
+							src={item.image}
 						/>
-						<b className="pb-5 px-5 text-[25px] font-thin">{classItem.classTitle}</b>
+						<b className="pb-5 px-5 text-[25px] font-thin">{item.heading}</b>
 						<div
-							onClick={() => navigate("/view-course")}
+							onClick={() => navigate(`/${item.path}`)}
 							className="text-[19px] mt-3 px-5 cursor-pointer hover:text-[#313131c6] transition-all"
 						>
-							{classItem.classDescription}
+							{item.description}
 						</div>
 					</div>
 				))}
 			</div>
-
-			{/*
-			<b
-				style={{
-					position: "absolute",
-					top: activeMenu ? "3620px" : "3666px",
-					left: activeMenu ? "422px" : "530px",
-					fontSize: activeMenu ? "20px" : "28px",
-				}}
-			>
-				Web Development
-			</b>
-			<b
-				style={{
-					position: "absolute",
-					top: activeMenu ? "3660px" : "3718px",
-					left: activeMenu ? "765px" : "977px",
-					fontSize: activeMenu ? "20px" : "28px",
-				}}
-			>
-				Graphic Design
-			</b> */}
-			{/* ......--------------------------------------------- */}
 			<img
 				style={{
 					position: "absolute",

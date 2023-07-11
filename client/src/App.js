@@ -24,7 +24,6 @@ const App = () => {
 	} = useStateContext();
 
 	const currentLocation = useLocation();
-	console.log(currentLocation);
 
 	useEffect(() => {
 		const currentThemeColor = localStorage.getItem("colorMode");
@@ -73,7 +72,7 @@ const App = () => {
 							: "bg-main-bg dark:bg-main-dark-bg  w-full min-h-screen flex-2 "
 					}
 				>
-					<div className="fixed md:static bg-main-bg dark:bg-main-dark-bg navbar w-full ">
+					<div className="sticky top-0 shadow-sm bg-main-bg dark:bg-main-dark-bg navbar w-full">
 						<Navbar />
 					</div>
 					<div>
