@@ -14,7 +14,7 @@ const initialData = {
 
 const TopicContent = () => {
 	const [formData, setFormData] = useState(initialData);
-	const [addCategory, topicResponseInfo] = useAddTopicContentMutation();
+	const [addCategory] = useAddTopicContentMutation();
 	const responseInfo = useViewTopicQuery();
 
 	const handleSubmit = (e) => {
