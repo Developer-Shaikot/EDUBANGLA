@@ -6,7 +6,6 @@ import BookAvatar from "./../../assets/images/BookAvatar.svg";
 import vector from "./../../assets/images/Group 119.svg";
 import bestEdu from "./../../assets/images/bestEdu.svg";
 import timerPart from "./../../assets/images/timerPart.svg";
-import chooseCourses from "./../../assets/images/chooseCourses.svg";
 import learnEdu from "./../../assets/images/educative.gif";
 import { useStateContext } from "../../contexts/ContextProvider";
 import "./Home.css";
@@ -41,20 +40,6 @@ const Home = () => {
 				fontFamily: "Poppins",
 			}}
 		>
-			<img
-				style={{
-					position: "absolute",
-					top: "3159px",
-					left: "0px",
-					borderRadius: "0px 0px 200px 0px",
-					width: "100%",
-					height: "1031px",
-					objectFit: "cover",
-				}}
-				alt=""
-				src={chooseCourses}
-			/>
-			{!activeMenu && (
 				<img
 					style={{
 						position: "absolute",
@@ -67,7 +52,6 @@ const Home = () => {
 					alt=""
 					src={robot}
 				/>
-			)}
 			<div
 				style={{
 					position: "absolute",
@@ -342,9 +326,9 @@ const Home = () => {
 			<img
 				style={{
 					position: "absolute",
-					top: "27%",
+					top: "28%",
 					left: "60%",
-					width: "40%",
+					width: "32%",
 					objectFit: "cover",
 				}}
 				alt=""
@@ -700,7 +684,7 @@ const Home = () => {
 					background:
 						"linear-gradient(213.12deg, rgba(121, 22, 215, 0.8), rgba(208, 100, 226, 0.93))",
 					boxShadow: "0px 4px 20px 2px rgba(0, 0, 0, 0.12)",
-					width: activeMenu ? "569px" : "607px",
+					width: "50%",
 					height: "718px",
 				}}
 			/>
@@ -709,7 +693,7 @@ const Home = () => {
 					position: "absolute",
 					top: "5268px",
 					// left: activeMenu ? "615px" : "874px",
-					right: activeMenu ? "42px" : "80px",
+					right: "19%",
 					fontSize: "40px",
 					fontFamily: "Montserrat",
 					color: "#fff",
@@ -755,7 +739,7 @@ const Home = () => {
 			/>
 			<iframe
 				src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d20666.06650648045!2d90.36840800216177!3d23.701730868383905!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1688745012977!5m2!1sen!2sbd"
-				width="600"
+				width="40%"
 				height="450"
 				allowfullscreen=""
 				loading="lazy"
@@ -764,9 +748,8 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "5360px",
-					left: activeMenu ? "unset" : "740px",
-					right: activeMenu ? "40px" : "unset",
-					width: "534px",
+					left: "52%",
+					width: "40%",
 					height: "534px",
 					objectFit: "cover",
 				}}
@@ -849,8 +832,7 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "2361px",
-					left: activeMenu ? "unset" : "833px",
-					right: activeMenu ? "5%" : "unset",
+					left: "56%",
 					background:
 						"linear-gradient(210.85deg, rgba(143, 51, 231, 0.85), rgba(213, 76, 236, 0.85) 98.72%, rgba(101, 16, 241, 0.39) 99.62%, rgba(147, 48, 241, 0.85))",
 					boxShadow: "0px 4px 30px 2px rgba(193, 128, 255, 0.42)",
@@ -862,12 +844,12 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "2406px",
-					right: activeMenu ? "5%" : "8%",
-					fontSize: activeMenu ? "20px" : "28px",
+					right: "13%",
+					fontSize:"20px",
 					display: "inline-block",
 					color: "#fff",
 					textAlign: "center",
-					width: activeMenu ? "350px" : "409px",
+					width: "29%",
 					height: "130px",
 				}}
 			>
@@ -878,7 +860,7 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "2593px",
-					right: activeMenu ? "6.5%" : "10%",
+					right: "17%",
 					letterSpacing: "0.06em",
 					fontWeight: "500",
 					color: "#fff",
@@ -894,7 +876,7 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "2709px",
-					right: activeMenu ? "6.5%" : "10%",
+					right: "17%",
 					letterSpacing: "0.06em",
 					fontWeight: "500",
 					color: "#fff",
@@ -910,7 +892,7 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "2825px",
-					right: activeMenu ? "6.5%" : "10%",
+					right: "17%",
 					letterSpacing: "0.06em",
 					fontWeight: "500",
 					color: "#fff",
@@ -959,8 +941,7 @@ const Home = () => {
 				style={{
 					position: "absolute",
 					top: "2922px",
-					left: activeMenu ? "unset" : "1067px",
-					right: activeMenu ? "8%" : "unset",
+					left: "80%",
 					width: "125px",
 					height: "34px",
 					fontSize: "16px",
@@ -975,7 +956,7 @@ const Home = () => {
 						backgroundColor: "transparent",
 						position: "absolute",
 						top: "-26%",
-						left: "-60%",
+						left: "-160%",
 						boxSizing: "border-box",
 						width: "125px",
 						height: "34px",
