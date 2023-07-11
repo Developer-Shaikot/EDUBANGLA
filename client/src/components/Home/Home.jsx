@@ -415,7 +415,6 @@ const Home = () => {
 							style={{
 								borderRadius: "20px 20px 0px 0px",
 								width: "100%",
-								height: activeMenu ? "197px" : "244px",
 								objectFit: "cover",
 								zIndex: "999",
 								marginBottom: "12px",
