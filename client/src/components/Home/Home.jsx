@@ -60,6 +60,7 @@ const Home = () => {
 			}}
 			className="shadow-md"
 		>
+			{!activeMenu && (
 				<img
 					style={{
 						position: "absolute",
@@ -72,6 +73,7 @@ const Home = () => {
 					alt=""
 					src={robot}
 				/>
+			)}
 			<div
 				style={{
 					position: "absolute",
@@ -418,7 +420,7 @@ const Home = () => {
 								objectFit: "cover",
 								zIndex: "999",
 								marginBottom: "12px",
-								marginTop: "10px"
+								marginTop: "10px",
 							}}
 							alt="hello-world"
 							src={item.image}
@@ -842,7 +844,7 @@ const Home = () => {
 					position: "absolute",
 					top: "2406px",
 					right: "13%",
-					fontSize:"20px",
+					fontSize: "20px",
 					display: "inline-block",
 					color: "#fff",
 					textAlign: "center",

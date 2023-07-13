@@ -17,6 +17,7 @@ import IsAlreadyLoggedIn from "./IsAlreadyLoggedIn";
 import Uploads from "../pages/dashboard/Uploads";
 import IsTeacher from "./IsTeacher";
 import Home from "../components/Home/Home";
+import IsNotTeacher from "./IsNotTeacher";
 
 const Routers = () => {
 	return (
@@ -25,12 +26,14 @@ const Routers = () => {
 				path="/"
 				element={
 					<IsLoggedIn>
-						<Home />
+						{/* <IsNotTeacher> */}
+							<Home />
+						{/* </IsNotTeacher> */}
 					</IsLoggedIn>
 				}
 			/>
 			<Route
-				path="/"
+				path="/uploads"
 				element={
 					<IsLoggedIn>
 						<IsTeacher>

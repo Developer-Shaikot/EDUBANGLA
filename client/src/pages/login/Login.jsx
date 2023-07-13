@@ -42,7 +42,7 @@ export default function Login() {
 	};
 
 	return (
-		<div className="m-2 md:m-10 mt-24 p-2 bg-white rounded-3xl">
+		<div className="m-2 md:m-10 mt-24 p-2">
 			<img
 				style={{
 					width: "400px",
@@ -51,7 +51,7 @@ export default function Login() {
 				src="https://res.cloudinary.com/hostingimagesservice/image/upload/v1674837865/eduBangla/images/cover-removebg-preview_wjlg3y.png"
 				alt=""
 			/>{" "}
-			<div className="relative flex flex-col overflow-hidden mt-12">
+			<div className="relative flex flex-col mt-12">
 				<div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl">
 
 					<h1 className="text-3xl font-semibold text-center text-purple-500 uppercase">

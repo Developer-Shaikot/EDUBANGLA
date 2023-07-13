@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { AiOutlineMenu } from "react-icons/ai";
 import { RiNotification3Line } from "react-icons/ri";
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { TooltipComponent } from "@syncfusion/ej2-react-popups";
 import { useCurrentUserQuery } from "../services/apiSlice";
-import { Cart, Chat, Notification, UserProfile } from ".";
+import { Notification, UserProfile } from ".";
 import { useStateContext } from "../contexts/ContextProvider";
 import { useNavigate } from "react-router-dom";
 
@@ -37,6 +37,12 @@ const Navbar = () => {
 	} = useStateContext();
 	const currentUserInfo = useCurrentUserQuery();
 	const navigate = useNavigate();
+
+	const [logoutState, setLogoutState] = useState(false);
+
+	const handleLogoutEvent = () => {
+		setLogoutState(true);
+	};
 
 	useEffect(() => {
 		const handleResize = () => setScreenSize(window.innerWidth);
@@ -107,7 +113,9 @@ const Navbar = () => {
 					</span>
 				)}
 
-				{isClicked.userProfile && <UserProfile />}
+				{(isClicked.userProfile && !logoutState) && (
+					<UserProfile handleLogoutEvent={handleLogoutEvent} />
+				)}
 			</div>
 		</div>
 	);

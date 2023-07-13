@@ -10,7 +10,7 @@ export const links = [
 		links: [
 			{
 				name: "Upload Content",
-				route: "",
+				route: "uploads",
 				icon: <AiOutlineCloudUpload />,
 			},
 		],
