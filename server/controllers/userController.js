@@ -41,10 +41,19 @@ exports.loginUser = expressAsyncHandler(async (req, res) => {
 				user_type: user.user_type,
 			});
 
-			res.cookie("userId", user._id);
+			// res.cookie("userId", user._id);
+			res.cookie("userId", user._id, {
+				maxAge: 6 * 60 * 60 * 1000, // 6 hour
+				secure: process.env.NODE_ENV === "production" ? true : false,
+				sameSite: process.env.NODE_ENV === "production" ? "none" : false,
+			});
 
+			// set httpOnly auth cookie to browser
 			res.cookie("auth", token, {
-				httpOnly: true,
+				maxAge: 26 * 60 * 60 * 1000, // 6 hour
+				secure: process.env.NODE_ENV === "production" ? true : false,
+				httpOnly: process.env.NODE_ENV === "production" ? true : false,
+				sameSite: process.env.NODE_ENV === "production" ? "none" : false,
 			});
 
 			return res.status(200).json({
@@ -66,7 +75,12 @@ exports.loginUser = expressAsyncHandler(async (req, res) => {
 });
 
 exports.logoutUser = expressAsyncHandler(async (req, res) => {
-	res.clearCookie("auth");
+	res.cookie("auth", "", {
+		maxAge: -1,
+		secure: process.env.NODE_ENV === "production" ? true : false,
+		httpOnly: process.env.NODE_ENV === "production" ? true : false,
+		sameSite: process.env.NODE_ENV === "production" ? "none" : false,
+	});
 	res.status(200).json({
 		success: true,
 		message: "Logout successful",
