@@ -25,7 +25,7 @@ const courseSchema = new Schema(
 		courseImg: {
 			type: String,
 			default:
-				"https://res.cloudinary.com/hostingimagesservice/image/upload/v1674792388/eduBangla/images/fav_icon_kggp1y_fcacpk.png",
+				"https://res.cloudinary.com/hostingimagesservice/image/upload/v1689281961/eduBangla/images/List-of-Professional-Courses-after-Graduation_zwqwxb.gif",
 		},
 		courseImgCloudinaryId: String,
 	},

@@ -14,7 +14,9 @@ exports.addCourse = expressAsyncHandler(async (req, res) => {
 
 	const newCourse = await new Course({
 		...req.body,
-		courseImg: result.secure_url || "",
+		courseImg:
+			result.secure_url ||
+			"https://res.cloudinary.com/hostingimagesservice/image/upload/v1689281961/eduBangla/images/List-of-Professional-Courses-after-Graduation_zwqwxb.gif",
 		courseImgCloudinaryId: result.public_id || "",
 	}).save();
 

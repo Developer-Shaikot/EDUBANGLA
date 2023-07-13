@@ -106,7 +106,7 @@ const AddCourse = () => {
 					</div>
 				</div>
 
-				<div className="w-full my-6 md:mb-0">
+				{/* <div className="w-full my-6 md:mb-0">
 					<label
 						className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
 						htmlFor="file_input"
@@ -123,7 +123,7 @@ const AddCourse = () => {
 						defaultValue={formData.image}
 						accept="image/*"
 					/>
-				</div>
+				</div> */}
 
 				<div className="md:w-2/3">
 					<button

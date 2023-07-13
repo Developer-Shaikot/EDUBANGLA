@@ -3,8 +3,8 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
 	reducerPath: "api",
 	baseQuery: fetchBaseQuery({
-		// baseUrl: "https://edu-bangla.onrender.com/",
-		baseUrl: "http://localhost:8080/",
+		baseUrl: "https://edu-bangla.onrender.com/",
+		// baseUrl: "http://localhost:8080/",
 		credentials: "include",
 	}),
 	tagTypes: [
@@ -94,11 +94,17 @@ export const api = createApi({
 			providesTags: ["course"],
 		}),
 		addCourse: builder.mutation({
-			query: (formData) => ({
-				url: `api/course/add`,
-				method: "POST",
-				body: formData,
-			}),
+			query: (formData) => {
+				console.log(formData)
+				const payload = new FormData();
+
+				payload.append("class", formData.class);
+				payload.append("courseName", formData.courseName);
+				payload.append("description", formData.description);
+				payload.append("courseImg", formData.image);
+
+				return { url: `api/course/add`, method: "POST", body: formData };
+			},
 			invalidatesTags: ["course"],
 		}),
 
