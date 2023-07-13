@@ -135,6 +135,12 @@ exports.isTeacher = expressAsyncHandler(async (req, res) => {
 });
 
 exports.logoutController = (req, res) => {
-	res.clearCookie("auth");
+	res.cookie("auth", "", {
+		maxAge: -1,
+		secure: process.env.NODE_ENV === "production" ? true : false,
+		httpOnly: process.env.NODE_ENV === "production" ? true : false,
+		sameSite: process.env.NODE_ENV === "production" ? "none" : false,
+	});
+	if (req.cookies.auth) return res.status(500).json({ message: "Logout failed", success: false });
 	res.status(200).json({ success: true, message: "Logout successful" });
 };
