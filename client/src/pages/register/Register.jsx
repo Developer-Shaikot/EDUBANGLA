@@ -13,7 +13,7 @@ export default function Register() {
 	const [registerError, setRegisterLoginError] = useState(false);
 
 	const handleError = () => {
-		toast.error("Login failed");
+		toast.error("Registration failed");
 		setRegisterLoginError(true);
 		setFormData((prev) => ({ ...prev, password: "" }));
 	};
@@ -29,6 +29,7 @@ export default function Register() {
 					navigate("/login", { replace: true });
 					setFormData(initialData);
 				} else {
+					console.log(data)
 					handleError();
 				}
 			})
